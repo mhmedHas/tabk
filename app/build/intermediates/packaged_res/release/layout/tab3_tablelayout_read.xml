@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+<FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="30dp" >
+
+        <View
+            android:id="@+id/View01"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="#BFEFFF" />
+
+       <TextView
+            android:id="@+id/textView_rbk"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/tab3_read_textView_rbk"
+            android:textColor="#ff1493"
+            android:textColorLink="#ff1493"
+            android:background="#BFEFFF"
+            android:textSize="18sp" />
+       
+       
+    </FrameLayout>
+ 	
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textView_rbank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="@string/tab3_read_textView_rbank" />
+
+        <Spinner
+            android:id="@+id/spinner_bankr"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+                android:id="@+id/textView_read_stadr"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="@string/tab3_read_textView_opstadr" />
+
+        <EditText
+            android:id="@+id/editText_startaddr"
+            android:layout_width="44dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:text="2" >
+
+            <requestFocus />
+        </EditText>
+
+        <TextView
+            android:id="@+id/textView__read_block"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="@string/tab3_read_textView_opblock" />
+
+        <EditText
+            android:id="@+id/editText_opcountr"
+            android:layout_width="41dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:text="6" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/editText_datar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10" />
+
+    <Button
+        android:id="@+id/button_read"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tab3_read_button_read" />
+
+</LinearLayout>

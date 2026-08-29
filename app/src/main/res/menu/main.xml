@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.module_android_demo.MainActivity" >
+ 
+    <item android:id="@+id/action_system" android:title="@string/action_system"></item>
+      <item android:id="@+id/action_lasterr" android:title="getlasterrinfo"></item>
+     <item android:id="@+id/action_qt" android:title="@string/action_qt"></item>
+     <item android:id="@+id/action_cw" android:title="@string/action_cw"></item>
+     <item android:id="@+id/action_serial" android:title="Command"></item>
+      <item android:id="@+id/action_reg" android:title="Registers"></item>
+      <item android:id="@+id/action_tagttl" android:title="@string/tagtempled_tt"></item>
+       <item android:id="@+id/action_update" android:title="@string/action_ud"></item>
+     <item android:id="@+id/action_gold_inventory" android:title="جرد Firebase"></item>
+     <item android:id="@+id/action_logout" android:title="تسجيل خروج"></item>
+    <item android:id="@+id/action_version" android:title="v4.19.15.12"></item>
+</menu>

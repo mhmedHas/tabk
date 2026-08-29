@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <!-- Bluetooth للأندرويد 12+ (API 31) -->
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+
+    <!-- إذن الإشعارات للأندرويد 13+ (API 33) -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- لأجهزة Android 11- (API 30-) -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- USB Host for RFID hardware bridge -->
+    <uses-feature android:name="android.hardware.usb.host" android:required="false" />
+
+    <application
+            android:name="com.example.module_android_demo.MyApplication"
+            android:allowBackup="true"
+            android:icon="@drawable/ic_launcher_th"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme">
+
+        <!-- شاشة تسجيل الدخول - أول شاشة تفتح في التطبيق -->
+        <activity
+                android:name="com.example.module_android_demo.LoginActivity"
+                android:exported="true"
+                android:windowSoftInputMode="adjustResize"
+                android:label="@string/app_name">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <!-- شاشة جرد Firebase - بتتفتح من قائمة الشاشة الرئيسية -->
+        <activity
+                android:name="com.example.module_android_demo.GoldInventoryActivity"
+                android:exported="false"
+                android:windowSoftInputMode="stateHidden"
+                android:label="جرد Firebase" />
+
+        <!-- Main Activity -->
+        <activity
+                android:name="com.example.module_android_demo.MainActivity"
+                android:exported="false"
+                android:windowSoftInputMode="stateHidden"
+                android:label="@string/app_name">
+
+        </activity>
+
+        <activity
+                android:name="com.example.module_android_demo.Sub4TabActivity"
+                android:exported="false"
+                android:windowSoftInputMode="stateHidden" />
+
+        <activity
+                android:name="com.example.module_android_demo.Sub1TabActivity"
+                android:exported="false"
+                android:windowSoftInputMode="stateHidden" />
+
+        <activity
+                android:name="com.example.module_android_demo.Sub3TabActivity"
+                android:exported="false"
+                android:windowSoftInputMode="stateHidden" />
+
+        <activity
+                android:name="com.example.module_android_demo.SubSystemActivity"
+                android:exported="false"
+                android:windowSoftInputMode="stateHidden" />
+
+        <activity
+                android:name="com.example.module_android_demo.SubPathActivity"
+                android:exported="false"
+                android:windowSoftInputMode="stateHidden" />
+
+        <activity
+                android:name="com.example.module_android_demo.SubQTActivity"
+                android:exported="false"
+                android:windowSoftInputMode="stateHidden" />
+
+        <activity
+                android:name="com.example.module_android_demo.SubCarryWaveActivity"
+                android:exported="false"
+                android:windowSoftInputMode="stateHidden" />
+
+        <activity
+                android:name="com.example.module_android_demo.SubDebugActivity"
+                android:exported="false"
+                android:windowSoftInputMode="stateHidden" />
+
+        <activity
+                android:name="com.example.module_android_demo.SubRegopActivity"
+                android:exported="false"
+                android:windowSoftInputMode="stateHidden" />
+
+        <activity
+                android:name="com.example.module_android_demo.SubTagTempLedActivity"
+                android:exported="false"
+                android:windowSoftInputMode="stateHidden" />
+
+        <activity
+                android:name="com.example.module_android_demo.UpdateActivity"
+                android:exported="false"
+                android:screenOrientation="portrait"
+                android:windowSoftInputMode="stateHidden" />
+
+    </application>
+
+</manifest>

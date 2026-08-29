@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">687907492866-9ca2q8fgvlehdpab78afe3hq1oia3j24.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">687907492866</string>
+    <string name="google_api_key" translatable="false">AIzaSyAeQl4oLMUu807w0ylWTsBmQAoLw6e3ZoE</string>
+    <string name="google_app_id" translatable="false">1:687907492866:android:9fadc19e2efceffb2a831b</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAeQl4oLMUu807w0ylWTsBmQAoLw6e3ZoE</string>
+    <string name="google_storage_bucket" translatable="false">kaki-f9832.firebasestorage.app</string>
+    <string name="project_id" translatable="false">kaki-f9832</string>
+</resources>

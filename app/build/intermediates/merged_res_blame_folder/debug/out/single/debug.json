@@ -1,0 +1,234 @@
+[
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_activity_login.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_listitemview_mfil.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/listitemview_mfil.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/raw_beep.wav.flat",
+        "source": "com.example.module_android_demo.app-main-37:/raw/beep.wav"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_tab4_tablelayout_gen2.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/tab4_tablelayout_gen2.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_path_location.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/path_location.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_registerop.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/registerop.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_tab4_tablelayout_gpio.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/tab4_tablelayout_gpio.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/drawable-hdpi_filedialog_file.png.flat",
+        "source": "com.example.module_android_demo.app-main-37:/drawable-hdpi/filedialog_file.png"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/drawable-hdpi_filedialog_root.png.flat",
+        "source": "com.example.module_android_demo.app-main-37:/drawable-hdpi/filedialog_root.png"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_activity_gold_inventory.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/activity_gold_inventory.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_tab4_tablelayout_invfre.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/tab4_tablelayout_invfre.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_tab4_tablelayout_antpow.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/tab4_tablelayout_antpow.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/menu_tagspop.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/menu/tagspop.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/menu_main.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/menu/main.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/drawable-xxhdpi_ic_launcher.png.flat",
+        "source": "com.example.module_android_demo.app-main-37:/drawable-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_listitemview_reg.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/listitemview_reg.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_subqtlayout.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/subqtlayout.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/drawable-xxhdpi_ic_launcher_th.png.flat",
+        "source": "com.example.module_android_demo.app-main-37:/drawable-xxhdpi/ic_launcher_th.png"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/drawable-hdpi_filedialog_folder_up.png.flat",
+        "source": "com.example.module_android_demo.app-main-37:/drawable-hdpi/filedialog_folder_up.png"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_tab4_tablelayout.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/tab4_tablelayout.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_tab4_tablelayout_invusl.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/tab4_tablelayout_invusl.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/raw_beep330.wav.flat",
+        "source": "com.example.module_android_demo.app-main-37:/raw/beep330.wav"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/drawable-mdpi_ic_launcher_th.png.flat",
+        "source": "com.example.module_android_demo.app-main-37:/drawable-mdpi/ic_launcher_th.png"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_tab3_tablelayout_write.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/tab3_tablelayout_write.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_items_pop.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/items_pop.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/raw_beep333.wav.flat",
+        "source": "com.example.module_android_demo.app-main-37:/raw/beep333.wav"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/drawable-hdpi_ic_launcher_th.png.flat",
+        "source": "com.example.module_android_demo.app-main-37:/drawable-hdpi/ic_launcher_th.png"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_tab3_tablelayout_read.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/tab3_tablelayout_read.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/drawable-xhdpi_ic_launcher_th.png.flat",
+        "source": "com.example.module_android_demo.app-main-37:/drawable-xhdpi/ic_launcher_th.png"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_filedialogitem.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/filedialogitem.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_tab4_tablelayout_invfil.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/tab4_tablelayout_invfil.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/drawable-xhdpi_ic_launcher.png.flat",
+        "source": "com.example.module_android_demo.app-main-37:/drawable-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_listitemview_inv.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/listitemview_inv.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/raw_beep2.wav.flat",
+        "source": "com.example.module_android_demo.app-main-37:/raw/beep2.wav"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_tab4_tablelayout_quickly.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/tab4_tablelayout_quickly.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_systemlayout.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/systemlayout.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/raw_beep51.wav.flat",
+        "source": "com.example.module_android_demo.app-main-37:/raw/beep51.wav"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_tab3_tablelayout_lock.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/tab3_tablelayout_lock.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_tab2_tablelayout.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/tab2_tablelayout.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_tab4_tablelayout_invemd.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/tab4_tablelayout_invemd.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_activity_main.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_tab1_tablelayout_power.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/tab1_tablelayout_power.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_tab3_tablelayout.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/tab3_tablelayout.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_tab_indicator_vertical.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/tab_indicator_vertical.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_fragment_main.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/fragment_main.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_tab4_tablelayout_others.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/tab4_tablelayout_others.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/drawable-mdpi_ic_launcher.png.flat",
+        "source": "com.example.module_android_demo.app-main-37:/drawable-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/drawable-hdpi_filedialog_wavfile.png.flat",
+        "source": "com.example.module_android_demo.app-main-37:/drawable-hdpi/filedialog_wavfile.png"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_tab1_tablelayout_debug.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/tab1_tablelayout_debug.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_tagtempled.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/tagtempled.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_activity_update.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/activity_update.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_tab1_tablelayout_connect.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/tab1_tablelayout_connect.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_item_gold_card.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/item_gold_card.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_listitemview_fre.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/listitemview_fre.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/drawable-hdpi_ic_launcher.png.flat",
+        "source": "com.example.module_android_demo.app-main-37:/drawable-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_carrywavelayout.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/carrywavelayout.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/layout_tab1_tablelayout.xml.flat",
+        "source": "com.example.module_android_demo.app-main-37:/layout/tab1_tablelayout.xml"
+    },
+    {
+        "merged": "com.example.module_android_demo.app-merged_res-35:/drawable-hdpi_filedialog_folder.png.flat",
+        "source": "com.example.module_android_demo.app-main-37:/drawable-hdpi/filedialog_folder.png"
+    }
+]

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/button_selectfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="浏览固件文件..." />
+    <Button
+        android:id="@+id/button_selectfile2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="浏览固件Bin文件..." />
+
+    <Button
+            android:id="@+id/button_selectfile3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="浏览芯片Bin文件..." />
+
+    <Button
+            android:id="@+id/button_startupdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="开始升级" />
+
+    <TextView
+        android:id="@+id/textView_path"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="path"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textView_ps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0%"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

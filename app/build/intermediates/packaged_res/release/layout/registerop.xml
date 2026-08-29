@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView_cavs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="寄存器类型"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <Spinner
+                android:id="@+id/spinner_regtype"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+          <TextView
+            android:id="@+id/textView_expl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#BFEFFF"
+            android:text="@string/systemlayout_textView_see"
+            android:textColor="#ff1493"
+            android:textSize="18sp" />
+          
+           <Button
+            android:id="@+id/button_fileread"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/path_location_button_select" />
+           
+        <TextView
+            android:id="@+id/textView_regr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#BFEFFF"
+            android:text="@string/tab3_read_button_read"
+            android:textColor="#ff1493"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView_regadr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address(h)" />
+
+            <EditText
+                android:id="@+id/editText_regadr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10" >
+
+                <requestFocus />
+            </EditText>
+
+            <TextView
+                android:id="@+id/textView_regrc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Count(d)" />
+
+            <EditText
+                android:id="@+id/editText_regrc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button_regread"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tab3_read_button_read" />
+        
+         <TextView
+            android:id="@+id/textView_regw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#BFEFFF"
+            android:text="@string/tab3_read_button_write"
+            android:textColor="#ff1493"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+ 
+            <TextView
+                android:id="@+id/textView_regwadr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Address(h)" />
+
+            <EditText
+                android:id="@+id/editText_regwadr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10" />
+            
+              <TextView
+                  android:id="@+id/textView_regwc"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Data(h)" />
+
+            <EditText
+                android:id="@+id/editText_regwv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10" >
+
+                <requestFocus />
+            </EditText>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button_regwrite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tab3_read_button_write" />
+
+        <ListView
+            android:id="@+id/listView_reglist"
+            android:layout_width="wrap_content"
+            android:layout_height="573dp" >
+
+        </ListView>
+
+    </LinearLayout>
+    
+
+</ScrollView>

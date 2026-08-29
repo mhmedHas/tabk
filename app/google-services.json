@@ -1,0 +1,171 @@
+{
+  "project_info": {
+    "project_number": "687907492866",
+    "project_id": "kaki-f9832",
+    "storage_bucket": "kaki-f9832.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:687907492866:android:7d4f0e5c30f7a92d2a831b",
+        "android_client_info": {
+          "package_name": "com.example.alarm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "687907492866-9ca2q8fgvlehdpab78afe3hq1oia3j24.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeQl4oLMUu807w0ylWTsBmQAoLw6e3ZoE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "687907492866-9ca2q8fgvlehdpab78afe3hq1oia3j24.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:687907492866:android:edb1de4aceaf875b2a831b",
+        "android_client_info": {
+          "package_name": "com.example.kaki"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "687907492866-ogh0srsilfou527g5e6jrng2h5gh16q7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kaki",
+            "certificate_hash": "e454f50851a66bfe2366f1aafec6164a63a4e6f7"
+          }
+        },
+        {
+          "client_id": "687907492866-9ca2q8fgvlehdpab78afe3hq1oia3j24.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeQl4oLMUu807w0ylWTsBmQAoLw6e3ZoE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "687907492866-9ca2q8fgvlehdpab78afe3hq1oia3j24.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:687907492866:android:9fadc19e2efceffb2a831b",
+        "android_client_info": {
+          "package_name": "com.example.module_android_demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "687907492866-9ca2q8fgvlehdpab78afe3hq1oia3j24.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeQl4oLMUu807w0ylWTsBmQAoLw6e3ZoE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "687907492866-9ca2q8fgvlehdpab78afe3hq1oia3j24.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:687907492866:android:ad879051128b83222a831b",
+        "android_client_info": {
+          "package_name": "com.example.uhf_gold_shop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "687907492866-19luigevj4hkhgffsefp8vhgqfjk302a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.uhf_gold_shop",
+            "certificate_hash": "e454f50851a66bfe2366f1aafec6164a63a4e6f7"
+          }
+        },
+        {
+          "client_id": "687907492866-9ca2q8fgvlehdpab78afe3hq1oia3j24.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeQl4oLMUu807w0ylWTsBmQAoLw6e3ZoE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "687907492866-9ca2q8fgvlehdpab78afe3hq1oia3j24.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:687907492866:android:e4df04ed1c37d1fe2a831b",
+        "android_client_info": {
+          "package_name": "com.kaki_rfid.uhf_gold_shop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "687907492866-9ca2q8fgvlehdpab78afe3hq1oia3j24.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeQl4oLMUu807w0ylWTsBmQAoLw6e3ZoE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "687907492866-9ca2q8fgvlehdpab78afe3hq1oia3j24.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

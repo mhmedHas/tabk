@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <string name="str_filter">过滤</string>
+   <string name="str_filterdata">过滤数据(hex)</string>
+   <string name="str_startadr4">起始地址(bit)</string>
+      <string name="str_startadr5">起始地址(blk)</string>
+   	<string name="str_filterbank">过滤bank</string>
+    <string name="str_match">匹配</string>
+	<string name="str_nomatch">不匹配</string>
+    <string name="str_disable">不启用</string>
+	<string name="str_enable">启用</string>
+	 <string name="str_pwd">密码</string>
+    <string name="str_acpwd">访问密码</string>
+    <string name="str_paramset">设置</string>
+	<string name="str_paramget">获取</string>
+    <string name="str_antsconnget">检测已接天线</string>
+	 <string name="str_filterdisable">不启用过滤</string>
+	<string name="str_filterenable">启用过滤</string>
+	 <string name="str_ant">天线</string> 
+	 <string name="str_one">唯一</string> 
+	 <string name="str_bank">区域</string>
+    	
+    <string name="app_name">UHF_Demo</string>
+    <string name="hello_world">Hello world!</string>
+	<string name="action_system">系统配置</string>
+	<string name="path_location_button_select">选择</string>
+	<string name="systemlayout_textView_system_tv">参数</string>
+	<string name="systemlayout_button_saveparam">保存参数</string>
+    <string name="systemlayout_button_saveptomd">修改模块默认</string>
+	<string name="systemlayout_button_paramdefault">默认参数</string>
+	<string name="systemlayout_textView_thread">方式</string>
+	<string name="systemlayout_textView_see">浏览</string>
+	<string name="systemlayout_textView_export">导出</string>
+	<string name="systemlayout_textView_exportxt">导出(.txt,.csv)</string>
+	<string name="systemlayout_textView_reftm">刷新时间</string>
+	
+	<string name="indicatorlayout_tv_indicator">天线参数</string>
+	<string name="tab1_textView_pm">电源管理</string>
+  	<string name="tab1_textView_pf">上电控制方式(外接电源,未集成均选无)</string>
+  	<string name="tab1_textView_connection">连接读写器</string>
+  	<string name="tab1_textView_adr">地址</string>
+  	<string name="tab1_textView_antport">天线口</string>
+  	<string name="tab1_button_connect">连接</string>
+ 	<string name="tab1_button_disconnect">断开</string>
+ 	<string name="tab1_textView_info">模块信息</string>
+ 	<string name="tab1_textView_mdt">模块</string>
+ 	
+  <string name="tab2_button_start">开始</string>
+  <string name="tab2_button_stop">停止</string>
+  <string name="tab2_button_readclear">清除</string>
+  <string name="tab2_textView_oncecnt">本次读到标签个数：</string>
+  <string name="tab2_textView_tocnt">   共读到标签个数：</string>
+  <string name="tab2_textView_set_status">设备状态：</string>
+  
+  <string name="tab3_lock_textView_lockopt">锁操作选项</string>
+	 <string name="tab3_lock_textView_lockbk">锁区域</string>
+	 <string name="tab3_lock_textView_locktp">锁类型</string>
+	 <string name="tab3_lock_button_lock">锁</string>
+	<string name="tab3_lock_button_kill">销毁</string>
+	
+		<string name="tab3_read_textView_rbk">选择读写器区域</string>
+	 <string name="tab3_read_textView_rbank">区域</string>
+	 <string name="tab3_read_textView_opstadr">起始地址(block)</string>
+	 <string name="tab3_read_textView_opblock">块数</string>
+	<string name="tab3_read_button_read">读</string>
+	<string name="tab3_read_button_write">写</string>
+	<string name="tab3_read_button_wepc">写epc</string>
+	
+	 <string name="tab3_TextView_dtp">数据类型</string>
+	 <string name="tab3_RadioButton_hex">十六进制</string>
+	
+	 	<string name="tab3_textView_tb3opant">操作天线</string>
+	 	<string name="tab3_optimeout">操作时长(毫秒)</string>
+    <string name="tab3_wrflag">写后读出ID</string>
+	 	<string name="tab4_atpw_TextView_antpck">天线检测</string>
+	 <string name="tab4_atpw_radio_tb4nck">不检测</string>
+	 <string name="tab4_atpw_radio_tb4ck">检测</string>
+	 <string name="tab4_atpw_textView_tab4pw">功率</string>
+	<string name="tab4_atpw_textView_1r">天线1 读功率 </string>
+	<string name="tab4_atpw_textView_tab4wp">写功率</string>
+	<string name="tab4_atpw_textView_2r">天线2 读功率 </string>
+	<string name="tab4_atpw_textView_3r">天线3 读功率 </string>
+	<string name="tab4_atpw_textView_4r">天线4 读功率 </string>
+	<string name="tab4_atpw_textView_5r">天线5 读功率 </string>
+	<string name="tab4_atpw_textView_6r">天线6 读功率 </string>
+	<string name="tab4_atpw_textView_7r">天线7 读功率 </string>
+	<string name="tab4_atpw_textView_8r">天线8 读功率 </string>
+	<string name="tab4_atpw_textView_9r">天线9 读功率 </string>
+	<string name="tab4_atpw_textView_10r">天线10 读功率 </string>
+	<string name="tab4_atpw_textView_11r">天线11 读功率 </string>
+	<string name="tab4_atpw_textView_12r">天线12 读功率 </string>
+	<string name="tab4_atpw_textView_13r">天线13 读功率 </string>
+	<string name="tab4_atpw_textView_14r">天线14 读功率 </string>
+	<string name="tab4_atpw_textView_15r">天线15 读功率 </string>
+	<string name="tab4_atpw_textView_16r">天线16 读功率 </string>
+	<string name="tab4_atpw_button_allset">设置为相同功率</string>
+	
+	<string name="tab4_gen2_TextView_g2q">Q值</string>
+	<string name="tab4_gen2_textView_tb4g2wm">写模式 </string>
+	<string name="tab4_gen2_textView_tb4g2ml">最大长度 </string>
+	<string name="tab4_gen2_TextView_tb4g2cd">gen2编码 </string>
+	
+	<string name="tab4_emd_TextView_tb4_emdda">附加数据</string>
+	<string name="tab4_emd_textView_tb4_bcnt">字节数 </string>
+	
+	<string name="tab4_fre_TextView_tb4fre">频率</string>
+	<string name="tab4_fre_checkBox_allselect">全选 </string>
+	<string name="tab4_fre_button_getfre">查看频点 </string>
+	<string name="tab4_fre_button_setfre">设置频点 </string>
+
+    <string name="tab4_fil_mfil">多标签过滤 </string>
+ 
+	 <string name="tab4_usl_textView_tb4invpro">M6e多协议盘点</string>
+	<string name="tab4_usl_TextView_tb4oppro">标签协议 </string>
+	<string name="tab4_usl_checkBox_ant1">天线1  </string>
+	<string name="tab4_usl_checkBox_ant2">天线2  </string>
+	<string name="tab4_usl_checkBox_ant3">天线3  </string>
+	<string name="tab4_usl_checkBox_ant4">天线4  </string>
+	<string name="tab4_usl_checkBox_ant5">天线5  </string>
+	<string name="tab4_usl_checkBox_ant6">天线6  </string>
+	<string name="tab4_usl_checkBox_ant7">天线7  </string>
+	<string name="tab4_usl_checkBox_ant8">天线8  </string>
+	<string name="tab4_usl_checkBox_ant9">天线9  </string>
+	<string name="tab4_usl_checkBox_ant10">天线10  </string>
+	<string name="tab4_usl_checkBox_ant11">天线11  </string>
+	<string name="tab4_usl_checkBox_ant12">天线12  </string>
+	<string name="tab4_usl_checkBox_ant13">天线13  </string>
+	<string name="tab4_usl_checkBox_ant14">天线14  </string>
+	<string name="tab4_usl_checkBox_ant15">天线15  </string>
+	<string name="tab4_usl_checkBox_ant16">天线16  </string>
+	<string name="tab4_usl_TextView_tb4rtm">普通模式时长 </string>
+	<string name="tab4_usl_textView_tb4invtm">盘点时间 </string>
+	<string name="tab4_usl_textView_read_inve">间隔 </string>
+	<string name="tab4_usl_checkBox_showemd">附加数据唯一 </string>
+	<string name="tab4_usl_checkBox_showant">天线唯一 </string>
+	<string name="tab4_usl_chkstoptime">停止时间(ms) </string>
+	<string name="tab4_usl_chkstopcount">停止数量(个) </string>
+	<string name="tab4_usl_epcup">Epc↑</string>
+	<string name="tab4_usl_prep">识读位置报表</string>
+	<string name="tab4_usl_tep">电量温度报表</string>
+	<string name="tab4_usl_latetime">延时时间(ms)</string>
+	<string name="tab4_usl_for">循环次数 </string>
+	 <string name="tab4_usl_rptimecount">时间数量报表</string>
+    <string name="tab4_usl_hopantime">天线驻留时间和(FCC)跳频时间ms</string>
+    <string name="tab4_usl_rltemp">实时温度</string>
+    <string name="tab4_usl_rlantst">实时天线状态</string>
+    <string name="tab4_usl_rlanthl">实时回波</string>
+    <string name="tab4_usl_rlfun">CC33功能</string>
+	<string name="tab4_ot_textView_tempu">温度 </string>
+	<string name="tab4_ot_textView_tb4otaoe">天线唯一性</string>
+	<string name="tab4_ot_TextView_tb4otdaoe">附加数据唯一性</string>
+	<string name="tab4_ot_TextView_tb4otrhr">记录最高RSSI</string>
+	<string name="tab4_ot_TextView_tb4otinvmo">盘存模式 </string>
+	<string name="tab4_ot_TextView_tb46btd">Iso180006b调整深度 </string>
+	<string name="tab4_ot_TextView_nxpu8">NxpU8 </string>
+	
+	<string name="tab4_qk_textView_tempu">停顿时间比 </string>
+	<string name="tab4_qk_textView_returnitem">返回标签数据项</string>
+	<string name="tab4_qk_TextView_count">次数</string>
+	<string name="tab4_qk_TextView_time">时间</string>
+	<string name="tab4_qk_TextView_pro">协议 </string>
+	<string name="tab4_qk_TextView_qkebqmd">一键开启1200高速模式 </string>
+	 <string name="tab4_qk_TextView_bt1">开启(最大功率,S1,间隔0)</string>
+	<string name="tab4_qk_TextView_bt0">开启(最大功率,S0,间隔0) </string>
+	<string name="tab4_qk_cb_1200h">1200手持机模式</string>
+    <string name="tab4_qk_stoputilno">没有新增标签自动停止</string>
+    <string name="tab4_qk_spbeforetime">占空比执行前的连续盘点时间ms</string>
+    <string name="tab4_qk_spbasetime">占空比执行的基准时间ms</string>
+    <string name="tab4_filterval1">过滤值>=(例如：-30）</string>
+    <string name="tab4_filterval2">过滤值>=(例如：5）</string>
+    <string name="tab4_runtimetemper">实时温度</string>
+    <string name="tab4_runtimeant">实时天线状态</string>
+    <string name="tab4_runtimevswr">实时回波</string>
+    <string name="tagtempled_tt">标签温度与LED</string>
+    <string name="tagtempled_temptag">读温度</string>
+    <string name="tagtempled_lightledtag">点亮LED标签</string>
+    <string name="tagtempled_keeplight">持续点亮</string>
+    <string name="tagtempled_readSCR409tag">读SCR409温度标签</string>
+    <string name="tagtempled_lightledx1tag">点亮ledx1标签</string>
+    <string name="tagtempled_yiliantag">读宜链温度和LED</string>
+  <string name="Constr_READ">读 </string>
+  <string name="Constr_CONNECT">连接 </string>
+  <string name="Constr_INVENTORY">盘点 </string>
+  <string name="Constr_RWLOP">读写锁 </string>
+  <string name="Constr_set">设置 </string>
+  <string name="Constr_SetFaill">设置失败： </string>
+  <string name="Constr_GetFaill">获取失败： </string>
+  <string name="Constr_SetOk">设置成功 </string>
+  <string name="Constr_unsupport">不支持 </string>
+  <string name="Constr_Putandexit">再按一次退出程序 </string>
+  <string name="Constr_stopscan">请先停止扫描 </string>
+  <string name="Constr_hadconnected">已经连接 </string>
+  <string name="Constr_plsetuuid">请设置好UUID: </string>
+  <string name="Constr_pwderror">密码错误 </string>
+  <string name="Constr_pwdmatchfail">密码不匹配 </string>
+  <string name="Constr_search">搜索 </string>
+  <string name="Constr_stop">停止 </string>
+  <string name="Constr_createreaderok">读写器创建失败 </string>
+  <string name="Constr_sub3readmem">读标签 </string>
+  <string name="Constr_sub3writemem">写标签 </string>
+  <string name="Constr_sub3lockkill">锁与销毁 </string>
+  <string name="Constr_sub3readfail">读失败: </string>
+  <string name="Constr_sub3nodata">无数据 </string>
+  <string name="Constr_sub3wrtieok">写成功 </string>
+  <string name="Constr_sub3writefail">写失败: </string>
+  <string name="Constr_sub3lockok">锁成功 </string>
+  <string name="Constr_sub3lockfail">锁失败: </string>
+  <string name="Constr_sub3killok">销毁成功 </string>
+  <string name="Constr_sub3killfial">销毁失败: </string>
+  <string name="Auto">自动 </string>
+  <string name="No">无 </string>
+  <string name="Constr_sub4invenpra">盘点参数 </string>
+   <string name="Constr_sub4statics">报表统计 </string>
+  <string name="Constr_sub4antpow">天线功率 </string>
+  <string name="Constr_sub4regionfre">区域频率 </string>
+  <string name="Constr_sub4gen2opt">Gen2项 </string>
+  <string name="Constr_sub4invenfil">盘点过滤 </string>
+  <string name="Constr_sub4addidata">附加数据 </string>
+  <string name="Constr_sub4others">其他参数 </string>
+  <string name="Constr_sub4quickly">快速模式 </string>
+  <string name="Constr_sub4setmodefail">配置模式失败 </string>
+  <string name="Constr_sub4setokresettoab">设置成功，重启读写器生效 </string>
+  <string name="Constr_sub4ndsapow">该设备需要功率一致 </string>
+  <string name="Constr_sub4unspreg">不支持的区域 </string>
+  <string name="Constr_sub4showop">显示 </string>
+   <string name="Constr_tcontrol">盘点控制 </string>
+  <string name="Constr_subblmode">模式 </string>
+  <string name="Constr_subblinven">盘点 </string>
+  <string name="Constr_subblfil">过滤 </string>
+  <string name="Constr_subblfre">频率 </string>
+  <string name="Constr_subblnofre">没有选择频点 </string>
+  <string name="Constr_subcsalterpwd">改密码 </string>
+  <string name="Constr_subcslockwpwd">带密码锁 </string>
+  <string name="Constr_subcslockwoutpwd">不带密码锁 </string>
+  <string name="Constr_subcsplsetimeou">请设置超时时间 </string>
+  <string name="Constr_subcsputcnpwd">填入当前密码与新密码 </string>
+  <string name="Constr_subcsplselreg">请选择区域 </string>
+  <string name="Constr_subcsopfail">操作失败 </string>
+  <string name="Constr_subcsputcurpwd">填入当前密码 </string>
+  <string name="Constr_subdbdisconnreconn">已经断开,正在重新连接 </string>
+  <string name="Constr_subdbhadconnected">已经连接 </string>
+  <string name="Constr_subdbconnecting">正在连接...... </string>
+  <string name="Constr_subdbrev">接收 </string>
+  <string name="Constr_subdbstop">停止 </string>
+  <string name="Constr_subdbdalennot">数据长度不对 </string>
+  <string name="Constr_subdbplpuhexchar">请输入16进制字符 </string>
+  <string name="Constr_subsysaveok">保存成功 </string>
+  <string name="Constr_subsysout">输入txt或者csv </string>
+  <string name="Constr_subsysreavaid">重新连接生效 </string>
+  <string name="Constr_sub1recfailed">重新连接失败 </string>
+  <string name="Constr_subsysavefailed">保存失败 </string>
+  <string name="Constr_subsysexefin">执行完毕 </string>
+  <string name="Constr_sub1adrno">地址没有输入 </string>
+  <string name="Constr_sub1pdtsl">请选择平台 </string>
+  <string name="Constr_mainpu">上电： </string>
+  <string name="Constr_nostopstreadfailed">不停顿盘点启动失败 </string>
+  <string name="Constr_nostopspreadfailed">不停顿盘点停止失败 </string>
+  <string name="Constr_nostopreadfailed">开始盘点失败： </string>
+  <string name="Constr_invenmode">模式配置 </string>
+  <string name="Constr_connectok">连接成功 </string>
+  <string name="Constr_connectfialed">连接失败 </string>
+  <string name="Constr_disconpowdown">断开读写器，下电： </string>
+  <string name="Constr_ok">成功: </string>
+  <string name="Constr_failed">失败: </string>
+  <string name="Constr_excep">异常: </string>
+  <string name="Constr_setcep">设置异常: </string>
+  <string name="Constr_getcep">获取异常: </string>
+  <string name="Constr_killok">KILL成功 </string>
+  <string name="Constr_killfailed">KILL失败 </string>
+  <string name="Constr_psiant">请选择盘点天线 </string>
+  <string name="Constr_selpro">请选择协议 </string> 
+  <string name="Constr_setpwd">设置功率: </string>
+  
+  <string name="Constr_carry_fftable">频率-反射 图表</string>
+  <string name="Constr_carry_frtable">频率-回波 图表</string>
+  <string name="Constr_carry_binvpw">盘点前前向功率:		 </string>
+  <string name="Constr_carry_binvfpw">盘点前反向功率:		 </string>
+  <string name="Constr_carry_invc">盘点标签个数:		   </string>
+  <string name="Constr_carry_invtep">盘点温度:		       </string>
+  <string name="Constr_carry_invpw">盘点前向功率:		    </string>
+  <string name="Constr_carry_ainvfpw">盘点后反向功率:		  </string> 
+  <string name="Constr_carry_ainvpw">盘点后前向功率 :		</string>
+  
+  
+  <string name="action_qt">QT 功能 </string>
+  <string name="action_cw">载波测试  </string>
+  <string name="action_sifretest">单频道载波测试  </string>
+  <string name="action_cw_bntgetiafp">获取盘点前向反向功率  </string>
+  <string name="action_cw_ibp">盘点前前向功率  </string>
+  <string name="action_cw_ibrp">盘点前反向功率  </string>
+  <string name="action_cw_ip">盘点前向功率 </string>
+  <string name="action_cw_iap">盘点后前向功率  </string>
+  <string name="action_cw_iarp">盘点后反向功率  </string>
+  <string name="action_cw_icnt">盘点标签个数  </string>
+  <string name="action_cw_itep">盘点温度  </string>
+   <string name="action_cw_cbwtest">频率-反向表  </string>
+  <string name="action_cw_rebwtest">频率-回波表  </string>
+   <string name="action_cw_rebwtestapi">频率-回波表(API)  </string>
+  <string name="action_db_open">打开  </string>
+  <string name="action_db_close">关闭  </string>
+  <string name="action_db_up">上电</string>
+  <string name="action_db_down">掉电:  </string>
+  <string name="action_db_send1">发送 1 </string>
+  <string name="action_db_send2">发送 2 </string>
+  <string name="action_db_send3">发送 3 </string>
+  <string name="action_db_revd">接收  </string>
+  <string name="action_db_baudr">波特率  </string>
+   <string name="action_db">调试  </string>
+    <string name="action_ud">升级  </string>
+   <string name="action_qt_perpetual">永久  </string>
+   <string name="action_qt_temporary">临时  </string>
+    <string name="action_qt_statyp">状态类型  </string>
+     <string name="action_qt_fararea">远场  </string>
+    <string name="action_qt_near">近场 </string>
+   <string name="action_qt_readdistan">识别距离 </string>
+   <string name="action_qt_pri">私密  </string>
+     <string name="action_qt_pub">公共  </string>
+    <string name="action_qt_memv">内存视图 </string>
+   <string name="action_qt_cmdtyp">命令类型 </string>
+     <string name="menu_tagop_add">添加演示 </string>
+    <string name="menu_tagop_rem">取消演示</string>
+    <string name="pop_content">请确认是否需要执行?执行后请重新上电!</string>
+   <string-array name="Coname">
+        <item>序号</item>
+        <item>EPC ID</item>
+        <item>次数</item>
+        <item>天线</item>
+        <item>协议</item>
+        <item>RSSI</item>
+        <item>频率</item>
+        <item>RFU</item>
+        <item>时间戳</item>
+        <item>附加数据</item>
+        <item>U8TID</item>
+        <item>U8BID</item>
+    </string-array>
+    <string-array name="pdaatpot">
+    <item>1</item>
+    <item>2</item>
+    <item>3</item>
+    <item>4</item>
+    <item>8</item>
+    <item>16</item>
+    </string-array>
+    <string-array name="spibank_gb">
+        <item>安全区</item>
+        <item>编码区</item>
+        <item>标签信息区</item>
+        <item>用户子区-0</item>
+        <item>用户子区-1</item>
+        <item>用户子区-2</item>
+        <item>用户子区-3</item>
+        <item>用户子区-4</item>
+        <item>用户子区-5</item>
+        <item>用户子区-6</item>
+        <item>用户子区-7</item>
+        <item>用户子区-8</item>
+        <item>用户子区-9</item>
+        <item>用户子区-10</item>
+        <item>用户子区-11</item>
+        <item>用户子区-12</item>
+        <item>用户子区-13</item>
+        <item>用户子区-14</item>
+        <item>用户子区-15</item>
+    </string-array>
+    <string-array name="spibank">
+        <item>保留区</item>
+        <item>EPC区</item>
+        <item>TID区</item>
+        <item>用户区</item>
+    </string-array>
+    <string-array name="spifbank">
+        <item>EPC区</item>
+        <item>TID区</item>
+        <item>用户区</item>
+    </string-array>
+    <string-array name="spilockbank">
+        <item>访问密码</item>
+        <item>销毁密码</item>
+        <item>EPC区</item>
+        <item>TID区</item>
+        <item>用户区</item>
+    </string-array>
+    <string-array name="spilocktype">
+        <item>解锁定</item>
+        <item>暂时锁定</item>
+        <item>永久锁定</item>
+    </string-array>
+    <string-array name="spilocktype_gb">
+        <item>可读可写</item>
+        <item>可读不可写</item>
+        <item>不可读可写</item>
+        <item>不可读不可写</item>
+        <item>保留</item>
+        <item>不需要鉴别</item>
+        <item>鉴别非安全通信</item>
+        <item>鉴别安全通信</item>
+    </string-array>
+    <string-array name="spireg">
+        <item>中国</item>
+        <item>北美</item>
+        <item>日本</item>
+        <item>韩国</item>
+        <item>欧洲</item>
+        <item>欧洲2</item>
+        <item>欧洲3</item>
+        <item>印度</item>
+        <item>加拿大</item>
+        <item>全频段</item>
+        <item>中国2</item>
+        <item>CE_HIGH</item>
+        <item>HK</item>
+        <item>TAIWAN</item>
+        <item>MALAYSIA</item>
+        <item>SOUTH_AFRICA</item>
+        <item>BRAZIL</item>
+        <item>THAILAND</item>
+        <item>SINGAPORE</item>
+        <item>AUSTRALIA</item>
+        <item>URUGUAY</item>
+        <item>VIETNAM</item>
+        <item>ISRAEL</item>
+        <item>PHILIPPINES</item>
+        <item>INDONESIA</item>
+        <item>NEW_ZEALAND</item>
+        <item>PERU</item>
+        <item>RUSSIA</item>
+        <item>JP2_LBT_6</item>
+        <item>JP3_NLBT_19</item>
+    </string-array>
+
+    <string-array name="spitari">
+        <item>25微秒</item>
+        <item>12.5微秒</item>
+        <item>6.25微秒</item>
+    </string-array>
+    <string-array name="spiwmod">
+        <item>字写</item>
+        <item>块写</item>
+    </string-array>
+    <string-array name="cusreadwrite">
+        <item>读操作</item>
+        <item>写操作</item>
+    </string-array>
+    <string-array name="cuslockunlock">
+        <item>锁</item>
+        <item>解锁</item>
+    </string-array>
+     <string-array name="regtype">
+        <item>Oem</item>
+        <item>Mac</item>
+         <item>bypass</item>
+    </string-array>
+     <string-array name="qmodes">
+        <item>普通模式</item>
+        <item>单标签手持机模式</item>
+        <item>多标签快速模式</item>
+        <item>多标签手持机模式</item>
+        <item>多标签智能（控温）模式</item>
+         <item>多标签测试模式</item>
+         <item>E7新快速模式</item>
+         <item>E7智能（控温）模式</item>
+         <item>E7读停模式</item>
+         <item>E7智能（重新）模式</item>
+         <item>GEN2国标混合模式</item>
+    </string-array>
+    <string-array name="gpodemo">
+        <item>无</item>
+        <item>触发标签演示1</item>
+        <item>触发标签演示2</item>
+        <item>自定义触发</item>
+        <item>自定义非触发</item>
+    </string-array>
+</resources>

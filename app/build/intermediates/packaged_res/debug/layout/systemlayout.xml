@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+            android:id="@+id/textView_system_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/systemlayout_textView_system_tv"
+            android:textColor="#ff1493"
+            android:background="#BFEFFF"
+            android:textSize="18sp" />
+     
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/button_saveparam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/systemlayout_button_saveparam" />
+
+        <Button
+            android:id="@+id/button_savesptomd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/systemlayout_button_saveptomd" />
+
+        <Button
+            android:id="@+id/button_paramdefault"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/systemlayout_button_paramdefault" />
+
+    </LinearLayout>
+
+    <TextView
+            android:id="@+id/TextView01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/systemlayout_textView_thread"
+            android:textColor="#ff1493"
+            android:background="#BFEFFF"
+            android:textSize="18sp" />
+     
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textView_once"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.53"
+            android:text="@string/systemlayout_textView_thread" />
+
+        <Spinner
+            android:id="@+id/spinner_thread"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textView_antpt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/systemlayout_textView_reftm" />
+
+        <EditText
+            android:id="@+id/editText_refreshtime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10" >
+
+            <requestFocus />
+        </EditText>
+
+        <Button
+            android:id="@+id/button_threadset"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/str_paramset" />
+
+    </LinearLayout>
+
+    <TextView
+            android:id="@+id/TextView02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/systemlayout_textView_exportxt"
+            android:background="#BFEFFF"
+            android:textColor="#ff1493"
+            android:textSize="18sp" />
+     
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/editText_path"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+ android:text="/sdcard/out.txt" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/button_outfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/systemlayout_textView_export" />
+
+        <Button
+            android:id="@+id/button_locate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/systemlayout_textView_see" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/TextView03"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#BFEFFF"
+        android:text="sound"
+        android:textColor="#ff1493"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <CheckBox
+            android:id="@+id/checkBox_sound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/str_enable" />
+
+        <Button
+            android:id="@+id/button_soundset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/str_paramset" />
+
+    </LinearLayout>
+
+</LinearLayout>

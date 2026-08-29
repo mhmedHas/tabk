@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/TextView12_ttl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#BFEFFF"
+            android:text="@string/str_filter"
+            android:textColor="#ff1493"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView7_ttl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_filterdata" />
+
+                <EditText
+                    android:id="@+id/editText_opfilterdata_ttl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView8_ttl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_startadr4" />
+
+                <EditText
+                    android:id="@+id/editText_opfilsadr_ttl"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:text="32" />
+
+                <TextView
+                    android:id="@+id/textView9_ttl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_filterbank" />
+
+                <Spinner
+                    android:id="@+id/spinner_opfbank_ttl"
+                    android:layout_width="105dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.18" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <RadioGroup
+                    android:id="@+id/radioGroup_opmatch_ttl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/omradio0_ttl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/str_match" />
+
+                    <RadioButton
+                        android:id="@+id/omradio1_ttl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/str_nomatch" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <RadioGroup
+                    android:id="@+id/radioGroup_enableopfil_ttl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/eoradio0_ttl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/str_disable" />
+
+                    <RadioButton
+                        android:id="@+id/eoradio1_ttl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/str_enable" />
+                </RadioGroup>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/TextView_tb3opant_ttl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#BFEFFF"
+                android:text="@string/tab3_textView_tb3opant"
+                android:textColor="#ff1493"
+                android:textColorLink="#ff1493"
+                android:textSize="18sp" />
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
+
+                    <RadioGroup
+                        android:id="@+id/radioGroup_opant_ttl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <RadioButton
+                            android:id="@+id/ant_radio0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="true"
+                            android:text="1" />
+
+                        <RadioButton
+                            android:id="@+id/ant_radio1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="2" />
+
+                        <RadioButton
+                            android:id="@+id/ant_radio2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="3" />
+
+                        <RadioButton
+                            android:id="@+id/ant_radio3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="4" />
+                        <RadioButton
+                            android:id="@+id/ant_radio4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="5" />
+                        <RadioButton
+                            android:id="@+id/ant_radio5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="6" />
+                        <RadioButton
+                            android:id="@+id/ant_radio6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="7" />
+                        <RadioButton
+                            android:id="@+id/ant_radio7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="8" />
+                        <RadioButton
+                            android:id="@+id/ant_radio8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="9" />
+                        <RadioButton
+                            android:id="@+id/ant_radio9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="10" />
+
+                        <RadioButton
+                            android:id="@+id/ant_radio10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="11" />
+
+                        <RadioButton
+                            android:id="@+id/ant_radio11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="12" />
+                        <RadioButton
+                            android:id="@+id/ant_radio12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="13" />
+                        <RadioButton
+                            android:id="@+id/ant_radio13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="14" />
+                        <RadioButton
+                            android:id="@+id/ant_radio14"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="15" />
+                        <RadioButton
+                            android:id="@+id/ant_radio15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="16" />
+                    </RadioGroup>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/textView001_ttl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#BFEFFF"
+                android:text="@string/str_pwd"
+                android:textColor="#ff1493"
+                android:textColorLink="#ff1493"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView10_ttl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:text="@string/str_pwd" />
+
+                <CheckBox
+                    android:id="@+id/checkBox_opacepwd_ttl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0" />
+
+                <EditText
+                    android:id="@+id/editText_password_ttl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10" >
+
+                    <requestFocus />
+                </EditText>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+            <TextView
+                    android:id="@+id/textView_tb4invtm_ttl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="读时长" />
+
+            <EditText
+                    android:id="@+id/editText_invtime_ttl"
+                    android:layout_width="64dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:text="1000" />
+
+            <TextView
+                    android:id="@+id/textView_inve_ttl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SEL(0-300)" />
+
+            <EditText
+                    android:id="@+id/editText_waitsel_ttl"
+                    android:layout_width="56dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:text="0" />
+
+            <TextView
+                    android:id="@+id/textView_inve_ttl2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="读等待(0-300)" />
+
+            <EditText
+                    android:id="@+id/editText_waitread_ttl"
+                    android:layout_width="56dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:text="100" />
+        </LinearLayout>
+
+        <TextView
+                android:id="@+id/textView_rbk_ttl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#BFEFFF"
+                android:text="@string/tagtempled_yiliantag"
+                android:textColor="#ff1493"
+                android:textColorLink="#ff1493"
+                android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView_rbank_ttl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="@string/tab3_read_textView_rbank" />
+
+            <Spinner
+                android:id="@+id/spinner_bankr_ttl"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView_read_stadr_ttl"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="@string/tab3_read_textView_opstadr" />
+
+            <EditText
+                android:id="@+id/editText_startaddr_ttl"
+                android:layout_width="44dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:text="7F" >
+
+                <requestFocus />
+            </EditText>
+
+            <TextView
+                android:id="@+id/textView__read_block_ttl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:text="@string/tab3_read_textView_opblock" />
+
+            <EditText
+                android:id="@+id/editText_opcountr_ttl"
+                android:layout_width="41dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:text="1" />
+        </LinearLayout>
+
+        <TextView
+                android:id="@+id/TextView04_ttl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#BFEFFF"
+                android:text="@string/tab4_qk_textView_returnitem"
+                android:textColor="#ff1493"
+                android:textSize="18sp" />
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                    <CheckBox
+                            android:id="@+id/checkBox_readcount_ttl"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/tab4_qk_TextView_count" />
+
+                    <CheckBox
+                            android:id="@+id/checkBox_rssi_ttl"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="RSSI" />
+
+                    <CheckBox
+                            android:id="@+id/checkBox_ant_ttl"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/str_ant" />
+
+                    <CheckBox
+                            android:id="@+id/checkBox_frequency_ttl"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/tab4_fre_TextView_tb4fre" />
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
+
+                    <CheckBox
+                            android:id="@+id/checkBox_time_ttl"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/tab4_qk_TextView_time" />
+
+                    <CheckBox
+                            android:id="@+id/checkBox_rfu_ttl"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="RFU" />
+
+                    <CheckBox
+                            android:id="@+id/checkBox_pro_ttl"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/tab4_qk_TextView_pro" />
+
+                    <CheckBox
+                            android:id="@+id/checkBox_tagdatalen_ttl"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Data" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+                android:id="@+id/button_read_ttl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.29"
+                android:text="@string/tagtempled_temptag" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                    android:id="@+id/button_led_ttl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/tagtempled_lightledtag" />
+
+            <CheckBox
+                    android:id="@+id/checkBox_ylledctt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/tagtempled_keeplight" />
+
+            <EditText
+                    android:id="@+id/editText_ylctt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:inputType="textPersonName"
+                    android:text="300" />
+
+            <TextView
+                android:id="@+id/textView_ledttl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tab4_usl_textView_read_inve" />
+
+            <EditText
+                    android:id="@+id/editText_ledttl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="500" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/editText_datar_ttl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10" />
+
+        <TextView
+                android:id="@+id/textView_sst_scr409"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#BFEFFF"
+                android:text="@string/tagtempled_readSCR409tag"
+                android:textColor="#ff1493"
+                android:textColorLink="#ff1493"
+                android:textSize="18sp" />
+
+
+        <Button
+                android:id="@+id/button_sst"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.29"
+                android:text="@string/tagtempled_temptag" />
+
+        <EditText
+                android:id="@+id/editText_sst"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="" />
+
+        <TextView
+                android:id="@+id/textView_sst_ledx1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#BFEFFF"
+                android:text="@string/tagtempled_lightledx1tag"
+                android:textColor="#ff1493"
+                android:textColorLink="#ff1493"
+                android:textSize="18sp" />
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+            <Button
+                    android:id="@+id/button_lightledx1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/tagtempled_lightledtag" />
+
+            <EditText
+                    android:id="@+id/editText_ledx1time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="ms"
+                    android:inputType="text"
+                    android:text="300" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+            android:id="@+id/textView_pm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tab1_textView_pm"
+            android:textColor="#ff1493"
+            android:background="#BFEFFF"
+            android:textSize="18sp" />
+     
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textView_pf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/tab1_textView_pf"
+            android:textSize="16sp" />
+
+        <Spinner
+            android:id="@+id/spinner_pdatype"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <TextView
+            android:id="@+id/textView_connection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tab1_textView_connection"
+            android:background="#BFEFFF"
+            android:textColor="#ff1493"
+            android:textSize="18sp" />
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:id="@+id/textView_adr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center|left"
+                android:text="@string/tab1_textView_adr"
+                android:textSize="16sp" />
+
+        <EditText
+                android:id="@+id/editText_adr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2">
+
+            <requestFocus />
+
+
+        </EditText>
+
+        <TextView
+                android:id="@+id/textView_cbdr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/action_db_baudr" />
+
+        <Spinner
+                android:id="@+id/spinner_ccbaudrate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textView_antpt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/tab1_textView_antport"
+            android:textSize="16sp" />
+
+        <Spinner
+            android:id="@+id/spinner_antports"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/button_connect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/tab1_button_connect" />
+
+        <Button
+            android:id="@+id/button_disconnect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/tab1_button_disconnect" />
+    </LinearLayout>
+    <Button
+            android:id="@+id/button_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="......" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <Button
+                android:id="@+id/button_update"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="firmwareupdate" />
+
+        <TextView
+                android:id="@+id/TextView_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tab1_textView_info"
+                android:textColor="#ff1493"
+                android:background="#BFEFFF"
+                android:textSize="18sp" />
+         
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView_mdt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/tab1_textView_mdt" />
+
+            <TextView
+                android:id="@+id/textView_module"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="..." />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

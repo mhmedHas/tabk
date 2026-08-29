@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D0B08"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="28dp">
+
+        <View android:layout_width="0dp" android:layout_height="40dp" />
+
+        <TextView
+            android:id="@+id/tv_login_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TRAC-GOLD RFID"
+            android:textColor="#F5E6A3"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="تسجيل الدخول لإدارة قطع المحل"
+            android:textColor="#A09582"
+            android:textSize="14sp" />
+
+        <View android:layout_width="0dp" android:layout_height="32dp" />
+
+        <EditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:hint="البريد الإلكتروني"
+            android:textColorHint="#A09582"
+            android:textColor="#F8F5F0"
+            android:inputType="textEmailAddress"
+            android:singleLine="true"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:background="#1A1510" />
+
+        <View android:layout_width="0dp" android:layout_height="14dp" />
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:hint="كلمة المرور"
+            android:textColorHint="#A09582"
+            android:textColor="#F8F5F0"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:background="#1A1510" />
+
+        <TextView
+            android:id="@+id/tv_login_error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text=""
+            android:textColor="#E55B5B"
+            android:visibility="gone" />
+
+        <View android:layout_width="0dp" android:layout_height="20dp" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:text="تسجيل الدخول"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:background="#D4AF37" />
+
+        <ProgressBar
+            android:id="@+id/pb_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</ScrollView>

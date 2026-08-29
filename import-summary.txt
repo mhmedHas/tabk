@@ -1,0 +1,105 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* ic_launcher_th-web.png
+* proguard-project.txt
+* version.txt
+
+Replaced Jars with Dependencies:
+--------------------------------
+The importer recognized the following .jar files as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the .jar file in your project was of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the jar replacement in the import wizard and try again:
+
+android-support-v4.jar => com.android.support:support-v4:19.1.0
+
+Replaced Libraries with Dependencies:
+-------------------------------------
+The importer recognized the following library projects as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the source files in your project were of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the library replacement in the import wizard and try
+again:
+
+appcompat-v7 => [com.android.support:appcompat-v7:19.1.0]
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => app\src\main\AndroidManifest.xml
+* assets\ => app\src\main\assets
+* libs\API_2.jar => app\libs\API_2.jar
+* libs\arm64-v8a\libAndroid_commdkg.so => app\src\main\jniLibs\arm64-v8a\libAndroid_commdkg.so
+* libs\arm64-v8a\libdevapi.so => app\src\main\jniLibs\arm64-v8a\libdevapi.so
+* libs\arm64-v8a\libDeviceAPI.so => app\src\main\jniLibs\arm64-v8a\libDeviceAPI.so
+* libs\arm64-v8a\libirdaSerialPort.so => app\src\main\jniLibs\arm64-v8a\libirdaSerialPort.so
+* libs\arm64-v8a\libModuleAPIJni.so => app\src\main\jniLibs\arm64-v8a\libModuleAPIJni.so
+* libs\arm64-v8a\libserial_port_spd.so => app\src\main\jniLibs\arm64-v8a\libserial_port_spd.so
+* libs\arm64-v8a\libuhf.so => app\src\main\jniLibs\arm64-v8a\libuhf.so
+* libs\armeabi-v7a\libAndroid_commdkg.so => app\src\main\jniLibs\armeabi-v7a\libAndroid_commdkg.so
+* libs\armeabi-v7a\libDeviceAPI.so => app\src\main\jniLibs\armeabi-v7a\libDeviceAPI.so
+* libs\armeabi-v7a\libiconv.so => app\src\main\jniLibs\armeabi-v7a\libiconv.so
+* libs\armeabi-v7a\libModuleAPIJni.so => app\src\main\jniLibs\armeabi-v7a\libModuleAPIJni.so
+* libs\armeabi-v7a\libserial_port_spd.so => app\src\main\jniLibs\armeabi-v7a\libserial_port_spd.so
+* libs\armeabi-v7a\libuhf.so => app\src\main\jniLibs\armeabi-v7a\libuhf.so
+* libs\armeabi-v7a\libZBarDecoder.so => app\src\main\jniLibs\armeabi-v7a\libZBarDecoder.so
+* libs\armeabi\libdevapi.so => app\src\main\jniLibs\armeabi\libdevapi.so
+* libs\armeabi\libDeviceAPI.so => app\src\main\jniLibs\armeabi\libDeviceAPI.so
+* libs\armeabi\libDevKitApi.so => app\src\main\jniLibs\armeabi\libDevKitApi.so
+* libs\armeabi\libem_gpio_jni.so => app\src\main\jniLibs\armeabi\libem_gpio_jni.so
+* libs\armeabi\libiconv.so => app\src\main\jniLibs\armeabi\libiconv.so
+* libs\armeabi\libModuleAPIJni.so => app\src\main\jniLibs\armeabi\libModuleAPIJni.so
+* libs\armeabi\libparts.so => app\src\main\jniLibs\armeabi\libparts.so
+* libs\armeabi\libscan_jni.so => app\src\main\jniLibs\armeabi\libscan_jni.so
+* libs\armeabi\libserial_port.so => app\src\main\jniLibs\armeabi\libserial_port.so
+* libs\armeabi\libserial_port_idata.so => app\src\main\jniLibs\armeabi\libserial_port_idata.so
+* libs\armeabi\libserial_port_spd.so => app\src\main\jniLibs\armeabi\libserial_port_spd.so
+* libs\armeabi\libSerialPort.so => app\src\main\jniLibs\armeabi\libSerialPort.so
+* libs\armeabi\libSimpleJni.so => app\src\main\jniLibs\armeabi\libSimpleJni.so
+* libs\armeabi\libSlr2000_jni.so => app\src\main\jniLibs\armeabi\libSlr2000_jni.so
+* libs\armeabi\libuhf_switch_jni.so => app\src\main\jniLibs\armeabi\libuhf_switch_jni.so
+* libs\armeabi\libZBarDecoder.so => app\src\main\jniLibs\armeabi\libZBarDecoder.so
+* libs\classes.jar => app\libs\classes.jar
+* libs\cw-deviceapi20190214.jar => app\libs\cw-deviceapi20190214.jar
+* libs\device.jar => app\libs\device.jar
+* libs\hitownsdk.jar => app\libs\hitownsdk.jar
+* libs\jxl.jar => app\libs\jxl.jar
+* libs\kaicomUHF.jar => app\libs\kaicomUHF.jar
+* libs\Module_Android_Power.jar => app\libs\Module_Android_Power.jar
+* libs\ModuleAPI_J.jar => app\libs\ModuleAPI_J.jar
+* libs\PosApi_X5_V1.03_20190710.jar => app\libs\PosApi_X5_V1.03_20190710.jar
+* libs\trinea-android-common.jar => app\libs\trinea-android-common.jar
+* libs\UHFDevice.jar => app\libs\UHFDevice.jar
+* lint.xml => app\lint.xml
+* res\ => app\src\main\res\
+* src\ => app\src\main\java\
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)

@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Coname">
+        <item>Sort</item>
+        <item>EPC ID</item>
+        <item>Count</item>
+        <item>Ant</item>
+        <item>Protocol</item>
+        <item>RSSI</item>
+        <item>Frequency</item>
+        <item>RFU</item>
+        <item>timestamp</item>
+        <item>Addition</item>
+        <item>U8TID</item>
+        <item>U8BID</item>
+    </string-array>
+    <string-array name="cuslockunlock">
+        <item>lock</item>
+        <item>unlock</item>
+    </string-array>
+    <string-array name="cusreadwrite">
+        <item>read opration</item>
+        <item>wirte opration</item>
+    </string-array>
+    <string-array name="gpodemo">
+        <item>NO</item>
+        <item>demo1</item>
+        <item>demo2</item>
+        <item>custom trigger</item>
+        <item>custom not trigger</item>
+    </string-array>
+    <string-array name="pdaatpot">
+    <item>1</item>
+    <item>2</item>
+    <item>3</item>
+    <item>4</item>
+    <item>8</item>
+    <item>16</item>
+    </string-array>
+    <string-array name="qmodes">
+        <item>General mode</item>
+        <item>Single Tag Handheld mode</item>
+        <item>Multiple Tags fast mode</item>
+        <item>Multiple Tags Handheld mode</item>
+        <item>Multiple Tags(control temp) Smart mode</item>
+         <item>Multiple Tags Test mode</item>
+         <item>E7 new fast mode </item>
+         <item>E7 (control temp) Smart mode </item>
+         <item>E7 read-idle mode</item>
+         <item>E7 (auto start) Smart mode </item>
+         <item>GEN2 and GB mode</item>
+    </string-array>
+    <string-array name="regtype">
+        <item>Oem</item>
+        <item>Mac</item>
+         <item>bypass</item>
+    </string-array>
+    <string-array name="spibank">
+        <item>reserver bank</item>
+        <item>EPC bank</item>
+        <item>TID bank</item>
+        <item>user bank</item>
+    </string-array>
+    <string-array name="spibank_gb">
+    <item>Security bank</item>
+    <item>Encoding bank</item>
+    <item>TagInfo bank</item>
+    <item>UserSub bank-0</item>
+    <item>UserSub bank-1</item>
+    <item>UserSub bank-2</item>
+    <item>UserSub bank-3</item>
+    <item>UserSub bank-4</item>
+    <item>UserSub bank-5</item>
+    <item>UserSub bank-6</item>
+    <item>UserSub bank-7</item>
+    <item>UserSub bank-8</item>
+    <item>UserSub bank-9</item>
+    <item>UserSub bank-10</item>
+    <item>UserSub bank-11</item>
+    <item>UserSub bank-12</item>
+    <item>UserSub bank-13</item>
+    <item>UserSub bank-14</item>
+    <item>UserSub bank-15</item>
+    </string-array>
+    <string-array name="spifbank">
+        <item>EPC bank</item>
+        <item>TID bank</item>
+        <item>user bank</item>
+    </string-array>
+    <string-array name="spilockbank">
+        <item>Access password</item>
+        <item>Kill password</item>
+        <item>EPCbank</item>
+        <item>TIDbank</item>
+        <item>Userbank</item>
+    </string-array>
+    <string-array name="spilocktype">
+        <item>Unlock</item>
+        <item>Temporary lock</item>
+        <item>Permanent lock</item>
+    </string-array>
+    <string-array name="spilocktype_gb">
+        <item>readable and writeable 可读可写</item>
+        <item>only read</item>
+        <item>only write</item>
+        <item>Unreadable and UnWritable</item>
+        <item>reserve</item>
+        <item>No need for identification</item>
+        <item>Identify Unsecure Communications</item>
+        <item>Identify secure Communication</item>
+    </string-array>
+    <string-array name="spireg">
+        <item>China</item>
+        <item>NA</item>
+        <item>Japan</item>
+        <item>Korea</item>
+        <item>Europe</item>
+        <item>Europe2</item>
+        <item>Europe3</item>
+        <item>India</item>
+        <item>Canada</item>
+        <item>ALL</item>
+        <item>China2</item>
+        <item>CE_HIGH</item>
+        <item>HK</item>
+        <item>TAIWAN</item>
+        <item>MALAYSIA</item>
+        <item>SOUTH_AFRICA</item>
+        <item>BRAZIL</item>
+        <item>THAILAND</item>
+        <item>SINGAPORE</item>
+        <item>AUSTRALIA</item>
+        <item>URUGUAY</item>
+        <item>VIETNAM</item>
+        <item>ISRAEL</item>
+        <item>PHILIPPINES</item>
+        <item>INDONESIA</item>
+        <item>NEW_ZEALAND</item>
+        <item>PERU</item>
+        <item>RUSSIA</item>
+        <item>JP2_LBT_6</item>
+        <item>JP3_NLBT_19</item>
+    </string-array>
+    <string-array name="spitari">
+        <item>25microsecond</item>
+        <item>12.5microsecond</item>
+        <item>6.25microsecond</item>
+    </string-array>
+    <string-array name="spiwmod">
+        <item>word write</item>
+        <item>block write</item>
+    </string-array>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <string name="Auto">auto </string>
+    <string name="Constr_CONNECT">connect </string>
+    <string name="Constr_GetFaill">get fail： </string>
+    <string name="Constr_INVENTORY">inventory </string>
+    <string name="Constr_Putandexit">put again then exit </string>
+    <string name="Constr_READ">read </string>
+    <string name="Constr_RWLOP">readwrtielock </string>
+    <string name="Constr_SetFaill">set fail： </string>
+    <string name="Constr_SetOk">set success </string>
+    <string name="Constr_carry_ainvfpw">after inventory reflect power:		  </string>
+    <string name="Constr_carry_ainvpw">after inventory power :		</string>
+    <string name="Constr_carry_binvfpw">before inventory reflect power:		 </string>
+    <string name="Constr_carry_binvpw">before inventory power:		    </string>
+    <string name="Constr_carry_fftable">frequency-reflect table</string>
+    <string name="Constr_carry_frtable">frequency-return loss table</string>
+    <string name="Constr_carry_invc">inventory tags count:		   </string>
+    <string name="Constr_carry_invpw">inventorying power:		    </string>
+    <string name="Constr_carry_invtep">inventory temperature:		       </string>
+    <string name="Constr_connectfialed">connect failed </string>
+    <string name="Constr_connectok">connect successful </string>
+    <string name="Constr_createreaderok">reader create fail </string>
+    <string name="Constr_disconpowdown">disconnect to reader，power down： </string>
+    <string name="Constr_excep">exception: </string>
+    <string name="Constr_failed">failed: </string>
+    <string name="Constr_getcep">get exception: </string>
+    <string name="Constr_hadconnected">had connected </string>
+    <string name="Constr_invenmode">mode set </string>
+    <string name="Constr_killfailed">KILL failed </string>
+    <string name="Constr_killok">KILL success </string>
+    <string name="Constr_mainpu">power up： </string>
+    <string name="Constr_nostopreadfailed">start inventory failed： </string>
+    <string name="Constr_nostopspreadfailed">nostopreadstopfailed </string>
+    <string name="Constr_nostopstreadfailed">nostopreadstartfailed </string>
+    <string name="Constr_ok">OK: </string>
+    <string name="Constr_plsetuuid">please set UUID: </string>
+    <string name="Constr_psiant">please select inventory antennas </string>
+    <string name="Constr_pwderror">password error </string>
+    <string name="Constr_pwdmatchfail">password match fail </string>
+    <string name="Constr_search">search </string>
+    <string name="Constr_selpro">please select protocol </string>
+    <string name="Constr_set">setting </string>
+    <string name="Constr_setcep">set exception: </string>
+    <string name="Constr_setpwd">set power: </string>
+    <string name="Constr_stop">stop </string>
+    <string name="Constr_stopscan">please stop scan first </string>
+    <string name="Constr_sub1adrno">no address </string>
+    <string name="Constr_sub1pdtsl">please select pdatype </string>
+    <string name="Constr_sub1recfailed">reconnect failed </string>
+    <string name="Constr_sub3killfial">kill fail: </string>
+    <string name="Constr_sub3killok">kill success </string>
+    <string name="Constr_sub3lockfail">lock fail: </string>
+    <string name="Constr_sub3lockkill">lock kill </string>
+    <string name="Constr_sub3lockok">lock success </string>
+    <string name="Constr_sub3nodata">no data </string>
+    <string name="Constr_sub3readfail">read fail: </string>
+    <string name="Constr_sub3readmem">read tag </string>
+    <string name="Constr_sub3writefail">write fail: </string>
+    <string name="Constr_sub3writemem">write tag </string>
+    <string name="Constr_sub3wrtieok">write success </string>
+    <string name="Constr_sub4addidata">addition </string>
+    <string name="Constr_sub4antpow">antenna power </string>
+    <string name="Constr_sub4gen2opt">Gen2 option </string>
+    <string name="Constr_sub4invenfil">inventory </string>
+    <string name="Constr_sub4invenpra">inventory parameters </string>
+    <string name="Constr_sub4ndsapow">read and write power must be same </string>
+    <string name="Constr_sub4others">other parameters </string>
+    <string name="Constr_sub4quickly">quickly mode </string>
+    <string name="Constr_sub4regionfre">region frequency </string>
+    <string name="Constr_sub4setmodefail">set mode fail </string>
+    <string name="Constr_sub4setokresettoab">set success ,reset to enable </string>
+    <string name="Constr_sub4showop">showway </string>
+    <string name="Constr_sub4statics">statistics reports</string>
+    <string name="Constr_sub4unspreg">unsupported region </string>
+    <string name="Constr_subblfil">filter </string>
+    <string name="Constr_subblfre">frequency </string>
+    <string name="Constr_subblinven">inventory </string>
+    <string name="Constr_subblmode">mode </string>
+    <string name="Constr_subblnofre">no select frequency </string>
+    <string name="Constr_subcsalterpwd">change password </string>
+    <string name="Constr_subcslockwoutpwd">lock without password </string>
+    <string name="Constr_subcslockwpwd">lock with password </string>
+    <string name="Constr_subcsopfail">operation fail: </string>
+    <string name="Constr_subcsplselreg">please select area </string>
+    <string name="Constr_subcsplsetimeou">please set timeout </string>
+    <string name="Constr_subcsputcnpwd">input current password and new password </string>
+    <string name="Constr_subcsputcurpwd">input current password </string>
+    <string name="Constr_subdbconnecting">connecting...... </string>
+    <string name="Constr_subdbdalennot">data length error </string>
+    <string name="Constr_subdbdisconnreconn">had disconnected,be connecting </string>
+    <string name="Constr_subdbhadconnected">had connected </string>
+    <string name="Constr_subdbplpuhexchar">please input hex chars </string>
+    <string name="Constr_subdbrev">receive </string>
+    <string name="Constr_subdbstop">stop </string>
+    <string name="Constr_subsysavefailed">save failed </string>
+    <string name="Constr_subsysaveok">save finished </string>
+    <string name="Constr_subsysexefin">execute finished </string>
+    <string name="Constr_subsysout">input txt or csv </string>
+    <string name="Constr_subsysreavaid">reconnect to availd </string>
+    <string name="Constr_tcontrol">inventory control </string>
+    <string name="Constr_unsupport">unsupported </string>
+    <string name="No">no </string>
+    <string name="action_cw">CarryWaveTest</string>
+    <string name="action_cw_bntgetiafp">get inventory forward and reverse power</string>
+    <string name="action_cw_cbwtest">frequency-reflect table </string>
+    <string name="action_cw_iap">after inventory forward power   </string>
+    <string name="action_cw_iarp">after inventory reverse power    </string>
+    <string name="action_cw_ibp">before inventory forward power  </string>
+    <string name="action_cw_ibrp">before inventory reverse power  </string>
+    <string name="action_cw_icnt">inventory tags count  </string>
+    <string name="action_cw_ip">inventory forward power  </string>
+    <string name="action_cw_itep">inventory temperature  </string>
+    <string name="action_cw_rebwtest">frequency-return table</string>
+    <string name="action_cw_rebwtestapi">frequencys-return table(API)</string>
+    <string name="action_db">debug </string>
+    <string name="action_db_baudr">baud rate  </string>
+    <string name="action_db_close">close  </string>
+    <string name="action_db_down">power down </string>
+    <string name="action_db_open">open  </string>
+    <string name="action_db_revd">received  </string>
+    <string name="action_db_send1">send1 </string>
+    <string name="action_db_send2">send2 </string>
+    <string name="action_db_send3">send3 </string>
+    <string name="action_db_up">power up</string>
+    <string name="action_qt">QT Set </string>
+    <string name="action_qt_cmdtyp">command type </string>
+    <string name="action_qt_fararea">far area  </string>
+    <string name="action_qt_memv">memory view </string>
+    <string name="action_qt_near">near area </string>
+    <string name="action_qt_perpetual">perpetual  </string>
+    <string name="action_qt_pri">private  </string>
+    <string name="action_qt_pub">public  </string>
+    <string name="action_qt_readdistan">read distance </string>
+    <string name="action_qt_statyp">status type  </string>
+    <string name="action_qt_temporary">temporary  </string>
+    <string name="action_sifretest">single frequency carry wave test</string>
+    <string name="action_system">system config</string>
+    <string name="action_ud">Update  </string>
+    <string name="app_name">UHF_Demo</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="indicatorlayout_tv_indicator">antenna parameters</string>
+    <string name="menu_tagop_add">add to demo </string>
+    <string name="menu_tagop_rem">cancle to demo</string>
+    <string name="path_location_button_select">select</string>
+    <string name="pop_content">YES,do it?Please repower please click YES!</string>
+    <string name="str_acpwd">access password </string>
+    <string name="str_ant">ant</string>
+    <string name="str_antsconnget">get connected ants</string>
+    <string name="str_bank">Region</string>
+    <string name="str_disable">disable</string>
+    <string name="str_enable">enable</string>
+    <string name="str_filter">filter</string>
+    <string name="str_filterbank">filter bank</string>
+    <string name="str_filterdata">filter data(hex)</string>
+    <string name="str_filterdisable">disable filter</string>
+    <string name="str_filterenable">enable filter</string>
+    <string name="str_match">match</string>
+    <string name="str_nomatch">not match</string>
+    <string name="str_one">unique</string>
+    <string name="str_paramget">get</string>
+    <string name="str_paramset">set</string>
+    <string name="str_pwd">password </string>
+    <string name="str_startadr4">start address(bit)</string>
+    <string name="str_startadr5">start address(blk)</string>
+    <string name="systemlayout_button_paramdefault">default parameters</string>
+    <string name="systemlayout_button_saveparam">save parameters</string>
+    <string name="systemlayout_button_saveptomd">menddefaultparam</string>
+    <string name="systemlayout_textView_export">export</string>
+    <string name="systemlayout_textView_exportxt">export(.txt,.csv)</string>
+    <string name="systemlayout_textView_reftm">refresh time</string>
+    <string name="systemlayout_textView_see">see</string>
+    <string name="systemlayout_textView_system_tv">parameters</string>
+    <string name="systemlayout_textView_thread">way</string>
+    <string name="tab1_button_connect">connect</string>
+    <string name="tab1_button_disconnect">disconnect</string>
+    <string name="tab1_textView_adr">address</string>
+    <string name="tab1_textView_antport">antenna port</string>
+    <string name="tab1_textView_connection">connect to reader</string>
+    <string name="tab1_textView_info">info</string>
+    <string name="tab1_textView_mdt">module</string>
+    <string name="tab1_textView_pf">power supply select</string>
+    <string name="tab1_textView_pm">power manager</string>
+    <string name="tab2_button_readclear">clear</string>
+    <string name="tab2_button_start">start</string>
+    <string name="tab2_button_stop">stop</string>
+    <string name="tab2_textView_oncecnt">read tags once count:</string>
+    <string name="tab2_textView_set_status">set state：</string>
+    <string name="tab2_textView_tocnt">" all count:"</string>
+    <string name="tab3_RadioButton_hex">Hex</string>
+    <string name="tab3_TextView_dtp">DataType</string>
+    <string name="tab3_lock_button_kill">kill</string>
+    <string name="tab3_lock_button_lock">lock</string>
+    <string name="tab3_lock_textView_lockbk">lock bank</string>
+    <string name="tab3_lock_textView_lockopt">lock option</string>
+    <string name="tab3_lock_textView_locktp">lock type</string>
+    <string name="tab3_optimeout">operation time(millseconds)</string>
+    <string name="tab3_read_button_read">read </string>
+    <string name="tab3_read_button_wepc">write epc</string>
+    <string name="tab3_read_button_write">write</string>
+    <string name="tab3_read_textView_opblock">block count</string>
+    <string name="tab3_read_textView_opstadr">start address</string>
+    <string name="tab3_read_textView_rbank">bank</string>
+    <string name="tab3_read_textView_rbk">select bank</string>
+    <string name="tab3_textView_tb3opant">operation ant</string>
+    <string name="tab3_wrflag">read ID after wrote</string>
+    <string name="tab4_atpw_TextView_antpck">ant check</string>
+    <string name="tab4_atpw_button_allset">set all the same power</string>
+    <string name="tab4_atpw_radio_tb4ck"> check</string>
+    <string name="tab4_atpw_radio_tb4nck">no check</string>
+    <string name="tab4_atpw_textView_10r">ant 10 read power </string>
+    <string name="tab4_atpw_textView_11r">ant 11 read power </string>
+    <string name="tab4_atpw_textView_12r">ant 12 read power </string>
+    <string name="tab4_atpw_textView_13r">ant 13 read power </string>
+    <string name="tab4_atpw_textView_14r">ant 14 read power </string>
+    <string name="tab4_atpw_textView_15r">ant 15 read power </string>
+    <string name="tab4_atpw_textView_16r">ant 16 read power </string>
+    <string name="tab4_atpw_textView_1r">ant 1 read power</string>
+    <string name="tab4_atpw_textView_2r">ant 2 read power </string>
+    <string name="tab4_atpw_textView_3r">ant 3 read power</string>
+    <string name="tab4_atpw_textView_4r">ant 4 read power </string>
+    <string name="tab4_atpw_textView_5r">ant 5 read power </string>
+    <string name="tab4_atpw_textView_6r">ant 6 read power </string>
+    <string name="tab4_atpw_textView_7r">ant 7 read power </string>
+    <string name="tab4_atpw_textView_8r">ant 8 read power </string>
+    <string name="tab4_atpw_textView_9r">ant 9 read power </string>
+    <string name="tab4_atpw_textView_tab4pw">power</string>
+    <string name="tab4_atpw_textView_tab4wp">write power</string>
+    <string name="tab4_emd_TextView_tb4_emdda">addition data</string>
+    <string name="tab4_emd_textView_tb4_bcnt">bytes count </string>
+    <string name="tab4_fil_mfil">mul tags filter </string>
+    <string name="tab4_filterval1">filter value>=(example：-30）</string>
+    <string name="tab4_filterval2">filter value>=(example：5）</string>
+    <string name="tab4_fre_TextView_tb4fre">frequency</string>
+    <string name="tab4_fre_button_getfre">see frequencys </string>
+    <string name="tab4_fre_button_setfre">set frequencys </string>
+    <string name="tab4_fre_checkBox_allselect">all select </string>
+    <string name="tab4_gen2_TextView_g2q">Q value</string>
+    <string name="tab4_gen2_TextView_tb4g2cd">gen2 code </string>
+    <string name="tab4_gen2_textView_tb4g2ml">max length </string>
+    <string name="tab4_gen2_textView_tb4g2wm">write mode</string>
+    <string name="tab4_ot_TextView_nxpu8">NxpU8 </string>
+    <string name="tab4_ot_TextView_tb46btd">Iso180006b depth </string>
+    <string name="tab4_ot_TextView_tb4otdaoe">addition data unique</string>
+    <string name="tab4_ot_TextView_tb4otinvmo">inventory mode </string>
+    <string name="tab4_ot_TextView_tb4otrhr">record max RSSI</string>
+    <string name="tab4_ot_textView_tb4otaoe">ant unique</string>
+    <string name="tab4_ot_textView_tempu">temperature </string>
+    <string name="tab4_qk_TextView_bt0">enable(max pow,S0,sleep 0) </string>
+    <string name="tab4_qk_TextView_bt1">enable(max pow,S1,sleep 0)</string>
+    <string name="tab4_qk_TextView_count">count</string>
+    <string name="tab4_qk_TextView_pro">pro</string>
+    <string name="tab4_qk_TextView_qkebqmd">one button to enable quickly mode </string>
+    <string name="tab4_qk_TextView_time">time</string>
+    <string name="tab4_qk_cb_1200h">1200 handset mode</string>
+    <string name="tab4_qk_spbasetime">baseduty(ms)</string>
+    <string name="tab4_qk_spbeforetime">timebeforeduty(ms)</string>
+    <string name="tab4_qk_stoputilno">stopfornonewtag</string>
+    <string name="tab4_qk_textView_returnitem">return items</string>
+    <string name="tab4_qk_textView_tempu">stop percent </string>
+    <string name="tab4_runtimeant">runtime-ant</string>
+    <string name="tab4_runtimetemper">runtime-temper</string>
+    <string name="tab4_runtimevswr">runtime-vswr</string>
+    <string name="tab4_usl_TextView_tb4oppro">Tag protocol </string>
+    <string name="tab4_usl_TextView_tb4rtm">general read time set </string>
+    <string name="tab4_usl_checkBox_ant1">ant1  </string>
+    <string name="tab4_usl_checkBox_ant10">ant10  </string>
+    <string name="tab4_usl_checkBox_ant11">ant11  </string>
+    <string name="tab4_usl_checkBox_ant12">ant12  </string>
+    <string name="tab4_usl_checkBox_ant13">ant13  </string>
+    <string name="tab4_usl_checkBox_ant14">ant14  </string>
+    <string name="tab4_usl_checkBox_ant15">ant15  </string>
+    <string name="tab4_usl_checkBox_ant16">ant16  </string>
+    <string name="tab4_usl_checkBox_ant2">ant2  </string>
+    <string name="tab4_usl_checkBox_ant3">ant3  </string>
+    <string name="tab4_usl_checkBox_ant4">ant4  </string>
+    <string name="tab4_usl_checkBox_ant5">ant5  </string>
+    <string name="tab4_usl_checkBox_ant6">ant6  </string>
+    <string name="tab4_usl_checkBox_ant7">ant7  </string>
+    <string name="tab4_usl_checkBox_ant8">ant8  </string>
+    <string name="tab4_usl_checkBox_ant9">ant9  </string>
+    <string name="tab4_usl_checkBox_showant">antidunique</string>
+    <string name="tab4_usl_checkBox_showemd">addtiondataunique </string>
+    <string name="tab4_usl_chkstopcount">stopcount </string>
+    <string name="tab4_usl_chkstoptime">stoptime(ms)</string>
+    <string name="tab4_usl_epcup">Epc↑</string>
+    <string name="tab4_usl_for">times </string>
+    <string name="tab4_usl_hopantime">hop antenna/(FCC)frequency time (ms)</string>
+    <string name="tab4_usl_latetime">delaytime(ms)</string>
+    <string name="tab4_usl_prep">T-P report</string>
+    <string name="tab4_usl_rlanthl">realtime-antreturnloss</string>
+    <string name="tab4_usl_rlantst">realtime-antennas</string>
+    <string name="tab4_usl_rlfun">CC33Funtion</string>
+    <string name="tab4_usl_rltemp">realtime-temp</string>
+    <string name="tab4_usl_rptimecount">T-C report</string>
+    <string name="tab4_usl_tep">E-E report</string>
+    <string name="tab4_usl_textView_read_inve">interval</string>
+    <string name="tab4_usl_textView_tb4invpro">M6e mul-protocol inventory </string>
+    <string name="tab4_usl_textView_tb4invtm">read timeout </string>
+    <string name="tagtempled_keeplight">keep light</string>
+    <string name="tagtempled_lightledtag">ligth LED tag</string>
+    <string name="tagtempled_lightledx1tag">light uniforma-tag</string>
+    <string name="tagtempled_readSCR409tag">read SCR409 temper-tag</string>
+    <string name="tagtempled_temptag">read temperture</string>
+    <string name="tagtempled_tt">tag‘s temper and LED</string>
+    <string name="tagtempled_yiliantag">YILIAN-tag‘s temper and led</string>
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
+        
+    </style>
+    <style name="AppTheme" parent="AppBaseTheme">
+        
+    </style>
+</resources>

@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+        <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="30dp" >
+
+        <View
+            android:id="@+id/View01"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="#BFEFFF" />
+
+        
+        
+        <TextView
+                android:id="@+id/TextView_tb4invpro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tab4_usl_textView_tb4invpro"
+                android:textColor="#ff1493"
+                 
+                android:textSize="18sp" />
+    </FrameLayout>
+     
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <CheckBox
+                android:id="@+id/checkBox_invgen2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="Gen2"
+                android:textSize="12sp" />
+
+            <CheckBox
+                android:id="@+id/checkBox_inv6b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="6B"
+                android:textSize="12sp" />
+
+            <CheckBox
+                android:id="@+id/checkBox_invipx64"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ipx64/GB"
+                android:textSize="12sp" />
+
+            <CheckBox
+                android:id="@+id/checkBox_invipx256"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ipx256"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <Button
+                android:id="@+id/button_invproset"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/str_paramset" />
+
+        <TextView
+                android:id="@+id/TextView_tb4oppro"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/tab4_usl_TextView_tb4oppro"
+                android:textColor="#ff1493"
+                android:textColorLink="#ff1493"
+                android:background="#BFEFFF"
+                android:textSize="18sp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <RadioGroup
+                android:id="@+id/radioGroup_pror"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/radio0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="Gen2"
+                    android:textSize="12sp" />
+
+                <RadioButton
+                    android:id="@+id/radio1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="6B"
+                    android:textSize="12sp" />
+
+                <RadioButton
+                        android:id="@+id/radio4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="GB"
+                        android:textSize="12sp" />
+
+                <RadioButton
+                    android:id="@+id/radio2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="ipx64"
+                    android:textSize="12sp" />
+
+                <RadioButton
+                    android:id="@+id/radio3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="ipx256"
+                    android:textSize="12sp" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/button_opproget"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/str_paramget" />
+
+            <Button
+                android:id="@+id/button_opproset"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/str_paramset" />
+
+        </LinearLayout>
+
+         <TextView
+                android:id="@+id/tv_indicator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/str_ant"
+                android:textColor="#ff1493"
+                android:background="#BFEFFF"
+                android:textSize="18sp" />
+          
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <CheckBox
+                android:id="@+id/checkBox_ant1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="@string/tab4_usl_checkBox_ant1" />
+
+            <CheckBox
+                android:id="@+id/checkBox_ant2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/tab4_usl_checkBox_ant2" />
+
+            <CheckBox
+                android:id="@+id/checkBox_ant3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/tab4_usl_checkBox_ant3" />
+
+            <CheckBox
+                android:id="@+id/checkBox_ant4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/tab4_usl_checkBox_ant4" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <CheckBox
+                android:id="@+id/checkBox_ant5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/tab4_usl_checkBox_ant5" />
+
+            <CheckBox
+                android:id="@+id/checkBox_ant6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/tab4_usl_checkBox_ant6" />
+
+            <CheckBox
+                android:id="@+id/checkBox_ant7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/tab4_usl_checkBox_ant7" />
+
+            <CheckBox
+                android:id="@+id/checkBox_ant8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/tab4_usl_checkBox_ant8" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <CheckBox
+                android:id="@+id/checkBox_ant9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="false"
+                android:text="@string/tab4_usl_checkBox_ant9" />
+
+            <CheckBox
+                android:id="@+id/checkBox_ant10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/tab4_usl_checkBox_ant10" />
+
+            <CheckBox
+                android:id="@+id/checkBox_ant11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/tab4_usl_checkBox_ant11" />
+
+            <CheckBox
+                android:id="@+id/checkBox_ant12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/tab4_usl_checkBox_ant12" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <CheckBox
+                android:id="@+id/checkBox_ant13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="false"
+                android:text="@string/tab4_usl_checkBox_ant13" />
+
+            <CheckBox
+                android:id="@+id/checkBox_ant14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/tab4_usl_checkBox_ant14" />
+
+            <CheckBox
+                android:id="@+id/checkBox_ant15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/tab4_usl_checkBox_ant15" />
+
+            <CheckBox
+                android:id="@+id/checkBox_ant16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/tab4_usl_checkBox_ant16" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/button_invantsget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/str_antsconnget" />
+
+            <Button
+                android:id="@+id/button_invantsset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/str_paramset" />
+
+        </LinearLayout>
+
+        <TextView
+                android:id="@+id/TextView_tb4rtm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tab4_usl_TextView_tb4rtm"
+                android:textColor="#ff1493"
+                android:background="#BFEFFF"
+                android:textSize="18sp" />
+        
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView_tb4invtm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tab4_usl_textView_tb4invtm" />
+
+            <EditText
+                    android:id="@+id/editText_invtime"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:text="50" />
+
+            <TextView
+                android:id="@+id/textView_inve"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tab4_usl_textView_read_inve" />
+
+            <EditText
+                    android:id="@+id/editText_invsleep"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:text="0" />
+
+            <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="周期成功次数" />
+
+            <EditText
+                    android:id="@+id/editText_cyclesuceper"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="0" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/button_invuslget"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/str_paramget" />
+
+            <Button
+                android:id="@+id/button_invuslset"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/str_paramset" />
+        </LinearLayout>
+        
+         <TextView
+                android:id="@+id/TextView_tb4showop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Constr_sub4showop"
+                android:textColor="#ff1493"
+                android:background="#BFEFFF"
+                android:textSize="18sp" />
+
+        <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                <Button
+                        android:id="@+id/button_showopset"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/str_paramset" />
+
+                <CheckBox
+                        android:id="@+id/checkBox_showant"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/tab4_usl_checkBox_showant" />
+
+                <CheckBox
+                        android:id="@+id/checkBox_showemd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="false"
+                        android:text="@string/tab4_usl_checkBox_showemd" />
+
+                <CheckBox
+                        android:id="@+id/checkBox_epcup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/tab4_usl_epcup" />
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/textView_contrl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#BFEFFF"
+            android:text="@string/Constr_tcontrol"
+            android:textColor="#ff1493"
+            android:textSize="18sp" />
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+ 
+            <CheckBox
+                android:id="@+id/checkBox_chkstoptime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/tab4_usl_chkstoptime" />
+
+                <EditText
+                        android:id="@+id/editText_stoptime"
+                        android:layout_width="64dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:text="10000" />
+
+            <Button
+                android:id="@+id/button_timecontrol"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_paramset" />
+       </LinearLayout>
+       <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+ 
+            <CheckBox
+                android:id="@+id/checkBox_chkstopcount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.05"
+                android:text="@string/tab4_usl_chkstopcount" />
+
+                <EditText
+                    android:id="@+id/editText_stopcount"
+                    android:layout_width="64dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.15"
+                    android:ems="10"
+                    android:text="100" />
+       </LinearLayout>
+<LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+    <CheckBox
+        android:id="@+id/checkBox_chklatetime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.05"
+        android:text="@string/tab4_usl_latetime" />
+
+                <EditText
+                    android:id="@+id/editText_latetime"
+                    android:layout_width="64dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.15"
+                    android:ems="10"
+                    android:text="5000" />
+       </LinearLayout>
+        <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" >
+            
+           
+           <CheckBox
+            android:id="@+id/checkBox_autostopcount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/tab4_usl_for" />
+
+            <EditText
+                    android:id="@+id/editText_autostopcount"
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="3" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/tab4_usl_textView_read_inve" />
+
+            <EditText
+                    android:id="@+id/editText_testforsleep"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:text="3000">
+
+            </EditText>
+        
+       </LinearLayout>
+       
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#BFEFFF"
+            android:text="@string/Constr_sub4statics"
+            android:textColor="#ff1493"
+            android:textSize="18sp" />
+          <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+ 
+            <CheckBox
+                android:id="@+id/checkBox_report_sec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/tab4_usl_rptimecount" />
+ 
+            <Button
+                android:id="@+id/button_report_sec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_paramset" />
+       </LinearLayout>
+          
+       
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+ 
+            <CheckBox
+                android:id="@+id/checkBox_report_pos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/tab4_usl_prep" />
+            
+            <CheckBox
+                android:id="@+id/checkBox_report_tep"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/tab4_usl_tep" />
+       </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView_anttime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#BFEFFF"
+            android:text="@string/tab4_usl_hopantime"
+            android:textColor="#ff1493"
+            android:textSize="18sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <EditText
+                android:id="@+id/editText_antime"
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:text="200" />
+
+            <Button
+                android:id="@+id/button_antimeset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_paramset" />
+
+            <EditText
+                    android:id="@+id/editText_fretime"
+                    android:layout_width="64dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="400/200/100"
+                    android:text="" />
+
+            <Button
+                    android:id="@+id/button_fretimeset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_paramset" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+ 
+</ScrollView>
