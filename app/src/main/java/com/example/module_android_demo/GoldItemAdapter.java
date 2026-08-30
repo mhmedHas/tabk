@@ -74,6 +74,12 @@ public class GoldItemAdapter extends RecyclerView.Adapter<GoldItemAdapter.ViewHo
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         GoldCatalogItem item = items.get(position);
         boolean present = presenceChecker.isPresent(item.epc);
+
+        if (!item.registered) {
+            bindUnregistered(holder, item, present);
+            return;
+        }
+
         int stateColor = Color.parseColor(present ? "#18E957" : "#FF3B3B");
 
         holder.tvName.setText(item.name);
@@ -95,6 +101,31 @@ public class GoldItemAdapter extends RecyclerView.Adapter<GoldItemAdapter.ViewHo
         holder.imgView.setTag(item.epc);
         holder.imgView.setImageResource(android.R.drawable.ic_menu_gallery);
         loadImage(item, holder.imgView);
+    }
+
+    /** كارت لشريحة اتقرأت لكن مالهاش سجل في Firebase: تحذير برتقالي بدل الصورة والبيانات. */
+    private void bindUnregistered(ViewHolder holder, GoldCatalogItem item, boolean present) {
+        holder.tvName.setText("قطعة غير مسجلة");
+        holder.tvType.setText("النوع: غير معروف");
+        holder.tvWeight.setText("الوزن: غير معروف");
+        holder.tvColor.setText("اللون: غير معروف");
+        holder.tvEpc.setText("EPC: " + item.epc);
+        holder.tvStatus.setText(present ? "غير مسجلة - موجودة" : "غير مسجلة - مرفوعة");
+
+        int warnColor = Color.parseColor("#F5A623");
+        holder.tvStatus.setTextColor(warnColor);
+        holder.tvStatusIcon.setText("!");
+        holder.tvStatusIcon.setTextColor(warnColor);
+
+        GradientDrawable border = new GradientDrawable();
+        border.setColor(Color.parseColor("#332B12"));
+        border.setStroke(dp(1), warnColor);
+        border.setCornerRadius(dp(12));
+        holder.card.setBackground(border);
+
+        // مفيش أي بحث عن صورة على الشبكة لقطعة غير مسجلة أصلاً.
+        holder.imgView.setTag(item.epc);
+        holder.imgView.setImageResource(android.R.drawable.ic_dialog_alert);
     }
 
     @Override

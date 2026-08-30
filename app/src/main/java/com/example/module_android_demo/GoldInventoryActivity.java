@@ -218,9 +218,9 @@ public class GoldInventoryActivity extends Activity {
                     if (!snapshot.isEmpty()) {
                         handleFirebaseItem(epc, snapshot.getDocuments().get(0));
                     } else {
-                        pendingEpcs.remove(epc);
-                        lastSeen.remove(epc);
-                        refreshPresenceUi();
+                        // الشريحة اتقرأت فعليًا لكن مالهاش أي سجل في Firebase.
+                        // نعرضها كـ "غير مسجلة" بدل ما نتجاهلها تمامًا.
+                        markEpcUnregistered(epc);
                     }
                 })
                 .addOnFailureListener(this, e -> {
@@ -228,6 +228,15 @@ public class GoldInventoryActivity extends Activity {
                     refreshPresenceUi();
                     Toast.makeText(this, "تعذر قراءة بيانات القطعة من Firebase", Toast.LENGTH_SHORT).show();
                 });
+    }
+
+    /** يعرض كارت "غير مسجلة" لشريحة مقروءة لا يوجد لها أي سجل مطابق في Firebase. */
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    private void markEpcUnregistered(String epc) {
+        pendingEpcs.remove(epc);
+        // لا نضيفها لـ itemCache: لو اتسجلت لاحقًا على Firebase، زر التحديث (سحب للأسفل)
+        // هيحدّثها تلقائيًا لأنها موجودة في displayedItems.
+        addItemToSession(GoldCatalogItem.unregistered(epc));
     }
 
     private void handleFirebaseItem(String epc, DocumentSnapshot doc) {
@@ -302,23 +311,57 @@ public class GoldInventoryActivity extends Activity {
         final int[] remaining = {displayedItems.size()};
 
         for (GoldCatalogItem oldItem : new ArrayList<>(displayedItems)) {
-            FirebaseFirestore.getInstance()
-                    .collection("users").document(uid).collection("items")
-                    .whereEqualTo("epcHex", oldItem.epc)
-                    .limit(1)
-                    .get()
-                    .addOnSuccessListener(snapshot -> {
-                        if (!snapshot.isEmpty()) {
-                            updateCachedItem(oldItem.epc, snapshot.getDocuments().get(0));
-                        }
-                        remaining[0]--;
-                        if (remaining[0] == 0) finishRefresh();
-                    })
-                    .addOnFailureListener(e -> {
-                        remaining[0]--;
-                        if (remaining[0] == 0) finishRefresh();
-                    });
+            String epc = oldItem.epc;
+            // نفس منطق البحث الثلاثي (items -> payload.qrCode -> balances) المستخدم عند أول قراءة،
+            // عشان قطعة اتعرضت "غير مسجلة" تقدر تتحدّث تلقائيًا لو اتضافت لـ Firebase بعدين.
+            lookupDocByEpc(epc, uid, doc -> {
+                if (doc != null) {
+                    updateCachedItem(epc, doc);
+                } else {
+                    markCachedItemUnregistered(epc);
+                }
+                remaining[0]--;
+                if (remaining[0] == 0) finishRefresh();
+            });
         }
+    }
+
+    private interface DocLookupCallback {
+        void onResult(DocumentSnapshot doc);
+    }
+
+    /** بحث ثلاثي الطبقات عن EPC معين: items.epcHex -> items.payload.qrCode -> balances.epcHex. */
+    private void lookupDocByEpc(final String epc, final String uid, final DocLookupCallback callback) {
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("users").document(uid).collection("items")
+                .whereEqualTo("epcHex", epc)
+                .limit(1)
+                .get()
+                .addOnSuccessListener(snapshot -> {
+                    if (!snapshot.isEmpty()) {
+                        callback.onResult(snapshot.getDocuments().get(0));
+                        return;
+                    }
+                    db.collection("users").document(uid).collection("items")
+                            .whereEqualTo("payload.qrCode", epc)
+                            .limit(1)
+                            .get()
+                            .addOnSuccessListener(payloadSnapshot -> {
+                                if (!payloadSnapshot.isEmpty()) {
+                                    callback.onResult(payloadSnapshot.getDocuments().get(0));
+                                    return;
+                                }
+                                db.collection("users").document(uid).collection("balances")
+                                        .whereEqualTo("epcHex", epc)
+                                        .limit(1)
+                                        .get()
+                                        .addOnSuccessListener(balancesSnapshot -> callback.onResult(
+                                                balancesSnapshot.isEmpty() ? null : balancesSnapshot.getDocuments().get(0)))
+                                        .addOnFailureListener(e -> callback.onResult(null));
+                            })
+                            .addOnFailureListener(e -> callback.onResult(null));
+                })
+                .addOnFailureListener(e -> callback.onResult(null));
     }
 
     private void updateCachedItem(String epc, DocumentSnapshot doc) {
@@ -328,6 +371,7 @@ public class GoldInventoryActivity extends Activity {
         GoldCatalogItem item = itemCache.get(epc);
         if (item == null) item = new GoldCatalogItem(epc);
 
+        item.registered = true;
         item.name = firstNonEmpty(str(data.get("name")), str(payload.get("name")), str(payload.get("kind")), item.name);
         item.type = firstNonEmpty(str(data.get("type")), str(data.get("category")), str(payload.get("type")), str(payload.get("kind")), item.type);
         item.weight = firstNonEmpty(str(data.get("weight")), str(payload.get("weight")), item.weight);
@@ -338,6 +382,20 @@ public class GoldInventoryActivity extends Activity {
         for (int i = 0; i < displayedItems.size(); i++) {
             if (epc.equals(displayedItems.get(i).epc)) {
                 displayedItems.set(i, item);
+                break;
+            }
+        }
+    }
+
+    /** لو التحديث لم يجد سجل في Firebase، اتأكد إن القطعة المعروضة لسه واضحة إنها "غير مسجلة". */
+    private void markCachedItemUnregistered(String epc) {
+        for (int i = 0; i < displayedItems.size(); i++) {
+            GoldCatalogItem existing = displayedItems.get(i);
+            if (epc.equals(existing.epc) && existing.registered) {
+                // كان معروض كمسجل وبقى غير موجود في Firebase (اتحذف مثلاً) - رجّعه "غير مسجلة".
+                GoldCatalogItem unregistered = GoldCatalogItem.unregistered(epc);
+                itemCache.remove(epc);
+                displayedItems.set(i, unregistered);
                 break;
             }
         }
