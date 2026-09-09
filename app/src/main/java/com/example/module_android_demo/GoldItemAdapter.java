@@ -152,7 +152,10 @@ public class GoldItemAdapter extends RecyclerView.Adapter<GoldItemAdapter.ViewHo
             return;
         }
 
-        if (storageUid == null || storageUid.isEmpty()) return;
+        if (storageUid == null || storageUid.isEmpty()) {
+            synchronized (imageLoadStarted) { imageLoadStarted.remove(epc); }
+            return;
+        }
 
         StorageReference ref = FirebaseStorage.getInstance().getReference()
                 .child("images").child("users").child(storageUid).child(epc.toUpperCase());
@@ -163,13 +166,17 @@ public class GoldItemAdapter extends RecyclerView.Adapter<GoldItemAdapter.ViewHo
                         downloadStorageImage(result.getItems().get(0), epc, target);
                     }
                 })
-                .addOnFailureListener(e -> { });
+                .addOnFailureListener(e -> {
+                    synchronized (imageLoadStarted) { imageLoadStarted.remove(epc); }
+                });
     }
 
     private void downloadStorageImage(StorageReference ref, final String epc, final ImageView target) {
         ref.getBytes(4L * 1024 * 1024)
                 .addOnSuccessListener(bytes -> decodeAndSet(bytes, epc, target))
-                .addOnFailureListener(e -> { });
+                .addOnFailureListener(e -> {
+                    synchronized (imageLoadStarted) { imageLoadStarted.remove(epc); }
+                });
     }
 
     private void loadHttpImage(final String url, final String epc, final ImageView target) {
@@ -192,6 +199,7 @@ public class GoldItemAdapter extends RecyclerView.Adapter<GoldItemAdapter.ViewHo
                 input.close();
                 decodeAndSet(output.toByteArray(), epc, target);
             } catch (Exception ignored) {
+                synchronized (imageLoadStarted) { imageLoadStarted.remove(epc); }
             } finally {
                 if (connection != null) connection.disconnect();
             }
@@ -201,8 +209,12 @@ public class GoldItemAdapter extends RecyclerView.Adapter<GoldItemAdapter.ViewHo
     private void decodeAndSet(byte[] bytes, final String epc, final ImageView target) {
         bgExecutor.execute(() -> {
             Bitmap bmp = decodeSampled(bytes);
-            if (bmp == null) return;
+            if (bmp == null) {
+                synchronized (imageLoadStarted) { imageLoadStarted.remove(epc); }
+                return;
+            }
             imageCache.put(epc, bmp);
+            synchronized (imageLoadStarted) { imageLoadStarted.remove(epc); }
             mainHandler.post(() -> {
                 if (epc.equals(target.getTag())) target.setImageBitmap(bmp);
             });
