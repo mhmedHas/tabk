@@ -277,10 +277,15 @@ public class GoldInventoryActivity extends Activity {
                 str(data.get("color")),
                 str(payload.get("color")),
                 "ذهبي");
+        // الحقل الفعلي في الداتا هو "images" (array) - بنجربه الأول لأنه
+        // اللي فعلاً موجود في القطع، وبنسيب باقي الأسماء المفردة كـ fallback
+        // توافقًا مع أي شكل بيانات قديم/مختلف.
         item.imageUrl = firstNonEmpty(
+                firstArrayItem(data.get("images")),
                 str(data.get("imageUrl")),
                 str(data.get("image")),
                 str(data.get("photoUrl")),
+                firstArrayItem(payload.get("images")),
                 str(payload.get("imageUrl")),
                 str(payload.get("image")),
                 str(payload.get("photoUrl")),
@@ -468,6 +473,14 @@ public class GoldInventoryActivity extends Activity {
 
     private static String str(Object value) {
         return value == null ? "" : String.valueOf(value).trim();
+    }
+
+    /** بياخد أول عنصر من حقل مصفوفة (زي "images") ويرجعه كـ String، أو "" لو مش List أو فاضي. */
+    private static String firstArrayItem(Object value) {
+        if (!(value instanceof List)) return "";
+        List<?> list = (List<?>) value;
+        if (list.isEmpty()) return "";
+        return str(list.get(0));
     }
 
     private static String firstNonEmpty(String... values) {
