@@ -148,6 +148,8 @@ public class MainActivity extends TabActivity {
 	int totalcountlast = 0;
 	Thread staticthread;
 	boolean isrun;
+	/** حالة حلقة Inventory الفعلية، مستقلة عن isrun الخاص بإحصائيات الاختبار. */
+	private volatile boolean inventoryRunning = false;
 	DjxlExcel dexel;
 	int batt_level;
 	int batt_scale;
@@ -1597,9 +1599,12 @@ public class MainActivity extends TabActivity {
                     myapp.allcyc=0;
                     myapp.sucesscyc=0;
 
+					inventoryRunning = true;
+					Log.d("RFID_FLOW", "Inventory loop started successfully");
 					ReadHandleUI();
 
 				} catch (Exception ex) {
+					inventoryRunning = false;
 					Toast.makeText(
 							MainActivity.this,
 							MyApplication.Constr_nostopreadfailed
@@ -1869,6 +1874,8 @@ public class MainActivity extends TabActivity {
 		if (isfinal)
 			isrun = false;
 
+		inventoryRunning = false;
+		Log.d("RFID_FLOW", "Inventory loop stopped");
 		Awl.ReleaseWakeLock();
 
 		if(EantCount.size()>1) {
@@ -3472,26 +3479,22 @@ public class MainActivity extends TabActivity {
 	 * متعطل (disabled) أو مش موجود، من غير أي تأثير جانبي.
 	 */
 	public boolean isReaderReadyForGoldInventory() {
-		try {
-			if (myapp == null || myapp.Mreader == null || myapp.Rpower == null) {
-				Log.e("RFID_FLOW", "Reader not initialized");
-				return false;
-			}
-			HardwareDetails details = myapp.Mreader.new HardwareDetails();
-			READER_ERR er = myapp.Mreader.GetHardwareDetails(details);
-			boolean ready = er == READER_ERR.MT_OK_ERR && !myapp.needreconnect;
-			Log.d("RFID_FLOW", "Reader health=" + er + " ready=" + ready);
-			return ready;
-		} catch (Exception e) {
-			Log.e("RFID_FLOW", "Reader health check failed", e);
-			return false;
-		}
+		boolean ready = myapp != null
+				&& myapp.Mreader != null
+				&& myapp.Rpower != null
+				&& !myapp.needreconnect;
+		Log.d("RFID_FLOW", "Reader state ready=" + ready + " inventoryRunning=" + inventoryRunning);
+		return ready;
 	}
 
 	public boolean startInventoryIfNeeded() {
-		if (isrun) {
+		if (inventoryRunning) {
 			Log.d("RFID_FLOW", "Inventory already running");
 			return true;
+		}
+		if (myapp == null || myapp.Mreader == null || myapp.Rpower == null || myapp.needreconnect) {
+			Log.e("RFID_FLOW", "Cannot start inventory: reader is not ready");
+			return false;
 		}
 		if (button_read != null && button_read.isEnabled()) {
 			Log.d("RFID_FLOW", "Starting inventory from GoldInventoryActivity");
@@ -3519,7 +3522,10 @@ public class MainActivity extends TabActivity {
 			}
 		}
 
-		System.exit(0);
+		handler.removeCallbacks(runnable_MainActivity);
+		if (Awl != null) {
+			try { Awl.ReleaseWakeLock(); } catch (Exception ignored) { }
+		}
 		super.onDestroy();
 	}
 
