@@ -3471,6 +3471,23 @@ public class MainActivity extends TabActivity {
 	 * آمن يتنادى أكتر من مرة - performClick() هيرجع false بس لو الزرار
 	 * متعطل (disabled) أو مش موجود، من غير أي تأثير جانبي.
 	 */
+	public boolean isReaderReadyForGoldInventory() {
+		try {
+			if (myapp == null || myapp.Mreader == null || myapp.Rpower == null) {
+				Log.e("RFID_FLOW", "Reader not initialized");
+				return false;
+			}
+			HardwareDetails details = myapp.Mreader.new HardwareDetails();
+			READER_ERR er = myapp.Mreader.GetHardwareDetails(details);
+			boolean ready = er == READER_ERR.MT_OK_ERR && !myapp.needreconnect;
+			Log.d("RFID_FLOW", "Reader health=" + er + " ready=" + ready);
+			return ready;
+		} catch (Exception e) {
+			Log.e("RFID_FLOW", "Reader health check failed", e);
+			return false;
+		}
+	}
+
 	public boolean startInventoryIfNeeded() {
 		if (isrun) {
 			Log.d("RFID_FLOW", "Inventory already running");
