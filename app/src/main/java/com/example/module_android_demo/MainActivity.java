@@ -685,6 +685,19 @@ public class MainActivity extends TabActivity {
 				myapp.Rparams.uants.length, myapp.m_BROption);
 	}
 
+	private void broadcastGoldInventoryTag(TAGINFO tfs) {
+		if (tfs == null || tfs.EpcId == null || tfs.EpcId.length == 0) return;
+		Intent intent = new Intent(BROADCAST_ACTION1);
+		intent.setPackage(getPackageName());
+		intent.putExtra("EPC", tfs.EpcId);
+		intent.putExtra("ANT", tfs.AntennaID);
+		intent.putExtra("RDC", tfs.ReadCnt);
+		intent.putExtra("RSSI", tfs.RSSI);
+		intent.putExtra("SRC", "GET_NEXT_TAG");
+		sendBroadcast(intent);
+		Log.d("RFID_FLOW", "GOLD EPC=" + Reader.bytes_Hexstr(tfs.EpcId));
+	}
+
 	/**
 	 * 异步盘点方式监听标签事件
 	 */
@@ -2657,6 +2670,9 @@ public class MainActivity extends TabActivity {
 							 */
 
 							if (er == READER_ERR.MT_OK_ERR) {
+
+                                // ThreadMODE=0 يقرأ عبر GetNextTag، لذلك يجب تمرير نفس EPC إلى جرد Firebase.
+                                broadcastGoldInventoryTag(tfs);
 
                                 //过滤读bank 多块数据
                                 if(myapp.filterreadbank) {
