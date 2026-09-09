@@ -694,11 +694,21 @@ public class MainActivity extends TabActivity {
 		@Override
 		public void tagRead(Reader r, final TAGINFO[] tag) {
 			// TODO Auto-generated method stub
-			Intent intent = new Intent();
-			intent.setAction(BROADCAST_ACTION1);
+			Intent intent = new Intent(BROADCAST_ACTION1);
+			// اجعل Broadcast الـ EPC موجهاً لنفس التطبيق فقط، حتى يصل بثبات إلى
+			// GoldInventoryActivity حتى لو كانت MainActivity ليست في الواجهة.
+			intent.setPackage(getPackageName());
+
 			if (myapp.issound)
 				soundPool.play(1, 1, 1, 0, 0, 1);
+
 			for (int i = 0; i < tag.length; i++) {
+				if (tag[i] == null || tag[i].EpcId == null || tag[i].EpcId.length == 0) {
+					Log.w("RFID_FLOW", "Tag callback arrived without EPC");
+					continue;
+				}
+				Log.d("RFID_FLOW", "TAG READ EPC=" + Reader.bytes_Hexstr(tag[i].EpcId)
+						+ " ANT=" + tag[i].AntennaID);
 				intent.putExtra("ANT", tag[i].AntennaID);
 				intent.putExtra("CRC", tag[i].CRC);
 				intent.putExtra("EMD", tag[i].EmbededData);
@@ -3445,10 +3455,18 @@ public class MainActivity extends TabActivity {
 	 * آمن يتنادى أكتر من مرة - performClick() هيرجع false بس لو الزرار
 	 * متعطل (disabled) أو مش موجود، من غير أي تأثير جانبي.
 	 */
-	public void startInventoryIfNeeded() {
-		if (button_read != null && button_read.isEnabled()) {
-			button_read.performClick();
+	public boolean startInventoryIfNeeded() {
+		if (isrun) {
+			Log.d("RFID_FLOW", "Inventory already running");
+			return true;
 		}
+		if (button_read != null && button_read.isEnabled()) {
+			Log.d("RFID_FLOW", "Starting inventory from GoldInventoryActivity");
+			button_read.performClick();
+			return true;
+		}
+		Log.e("RFID_FLOW", "Cannot start inventory: start button unavailable/disabled");
+		return false;
 	}
 
 	@Override
