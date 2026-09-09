@@ -99,6 +99,14 @@ import android.graphics.drawable.ColorDrawable;
 @SuppressWarnings("deprecation")
 public class MainActivity extends TabActivity {
 
+	/**
+	 * مرجع للـ Activity الحالية، عشان أي شاشة تانية (زي GoldInventoryActivity)
+	 * تقدر تطلب تشغيل حلقة القراءة الفعلية (نفس اللي زرار "ابدأ" 开始 بيعمله)
+	 * برمجيًا من غير ما المستخدم يحتاج يدوس على الزرار في تاب 盘点/INVENTORY يدويًا.
+	 */
+	public static MainActivity instance;
+
+
 	ExpandableListView tab4_left, tab4_right;
 	TextView tv_once, tv_state, tv_tags, tv_costt, tv_timcost, tv_statics,tv_cycsuceper;
 	Button button_read, button_stop, button_clear, button_modeset;
@@ -1186,6 +1194,7 @@ public class MainActivity extends TabActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		instance = this;
 
 		// لازم يكون المستخدم مسجل دخول بحساب Firebase قبل ما يدخل الشاشة الرئيسية
 		if (FirebaseAuth.getInstance().getCurrentUser() == null) {
@@ -3427,9 +3436,27 @@ public class MainActivity extends TabActivity {
 		super.onResume();
 	}
 
+	/**
+	 * بيشغّل نفس اللي زرار "开始" (button_read) بيعمله لما تدوسه بإيدك في
+	 * تاب 盘点/INVENTORY - يعني ببدأ حلقة القراءة الفعلية اللي بتبعت
+	 * BROADCAST_ACTION1 لكل شريحة، وده اللي شاشة GoldInventoryActivity
+	 * (جرد Firebase) مستمعة له. بدون النداء ده، الشاشة تفضل مستمعة بس
+	 * حلقة القراءة نفسها ما بتكونش بدأت أبداً.
+	 * آمن يتنادى أكتر من مرة - performClick() هيرجع false بس لو الزرار
+	 * متعطل (disabled) أو مش موجود، من غير أي تأثير جانبي.
+	 */
+	public void startInventoryIfNeeded() {
+		if (button_read != null && button_read.isEnabled()) {
+			button_read.performClick();
+		}
+	}
+
 	@Override
 	protected void onDestroy() {
 		//Awl.ReleaseWakeLock();
+		if (instance == this) {
+			instance = null;
+		}
 		unregisterReceiver(mBroadcastReceiver);
 
 		if (myapp.isReport_rec) {

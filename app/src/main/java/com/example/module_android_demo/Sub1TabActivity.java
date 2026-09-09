@@ -810,6 +810,13 @@ public class Sub1TabActivity<OpeListActivity> extends Activity {
 		tw.getChildAt(3).setVisibility(View.VISIBLE);
 		// بدل ما نفتح تاب "盘点/INVENTORY" العادي، نفتح شاشة صحن الذهب
 		// (صور القطع + التلوين الأخضر/الأحمر حسب وجودها) على طول بعد نجاح الاتصال.
+		// لازم نبدأ حلقة القراءة الفعلية بنفسنا الأول (نفس اللي زرار "开始"
+		// بيعمله في تاب 盘点)، لأن شاشة صحن الذهب بس بتستمع للـ broadcast
+		// اللي حلقة القراءة دي بتبعته - من غيرها مفيش أي قطعة هتظهر حتى
+		// لو موجودة فعليًا على الصحن.
+		if (MainActivity.instance != null) {
+			MainActivity.instance.startInventoryIfNeeded();
+		}
 		startActivity(new Intent(Sub1TabActivity.this, GoldInventoryActivity.class));
 	}
 
