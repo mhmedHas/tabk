@@ -3511,7 +3511,10 @@ public class MainActivity extends TabActivity {
 		if (instance == this) {
 			instance = null;
 		}
-		unregisterReceiver(mBroadcastReceiver);
+		if (mBroadcastReceiver != null) {
+			try { unregisterReceiver(mBroadcastReceiver); } catch (IllegalArgumentException ignored) { }
+			mBroadcastReceiver = null;
+		}
 
 		if (myapp.isReport_rec) {
 			try {
