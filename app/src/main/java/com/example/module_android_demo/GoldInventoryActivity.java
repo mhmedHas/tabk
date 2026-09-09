@@ -181,63 +181,62 @@ public class GoldInventoryActivity extends Activity {
         String uid = auth.getCurrentUser().getUid();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+        // بعض القطع (خصوصاً القادمة من الرصيد الافتتاحي) بيكون فيها نص "ENTRE"
+        // ملزّق بعد الـ EPC الحقيقي جوه حقل epcHex
+        // (مثال: "E28011B02000A60EF2A10396ENTRE" بدل "E28011B02000A60EF2A10396").
+        // بندوّر على النسخة دي الأول (exact match سريع زي أي query عادي)،
+        // وبعدين لو ملقيناش، بندوّر على النسخة العادية السليمة.
         db.collection("users").document(uid).collection("items")
-                .whereEqualTo("epcHex", epc)
+                .whereEqualTo("epcHex", epc + "ENTRE")
                 .limit(1)
                 .get()
-                .addOnSuccessListener(this, snapshot -> {
-                    if (!snapshot.isEmpty()) {
-                        handleFirebaseItem(epc, snapshot.getDocuments().get(0));
+                .addOnSuccessListener(this, entreSnapshot -> {
+                    if (!entreSnapshot.isEmpty()) {
+                        handleFirebaseItem(epc, entreSnapshot.getDocuments().get(0));
                         return;
                     }
 
-                    // بعض القطع (خصوصاً القادمة من الرصيد الافتتاحي) بيكون فيها
-                    // نص زيادة ملزّق بعد الـ EPC الحقيقي جوه حقل epcHex
-                    // (مثال: "E28011B02000A60EF2A10396ENTRE" بدل "E28011B02000A60EF2A10396").
-                    // المطابقة الحرفية فوق مش هتلاقيها، فبنجرب مطابقة "يبدأ بـ" كخطوة تالية
-                    // قبل ما نروح على fallback بيانات qrCode القديمة.
-                    findItemByEpcPrefix(epc, uid, () -> {
-                        // توافق مع البيانات القديمة التي يكون فيها EPC داخل payload.qrCode.
-                        db.collection("users").document(uid).collection("items")
-                                .whereEqualTo("payload.qrCode", epc)
-                                .limit(1)
-                                .get()
-                                .addOnSuccessListener(this, payloadSnapshot -> {
-                                    if (!payloadSnapshot.isEmpty()) {
-                                        handleFirebaseItem(epc, payloadSnapshot.getDocuments().get(0));
-                                    } else {
-                                        findInBalances(epc, uid);
-                                    }
-                                })
-                                .addOnFailureListener(this, e -> findInBalances(epc, uid));
-                    });
-                })
-                .addOnFailureListener(this, e -> findInBalances(epc, uid));
-    }
+                    db.collection("users").document(uid).collection("items")
+                            .whereEqualTo("epcHex", epc)
+                            .limit(1)
+                            .get()
+                            .addOnSuccessListener(this, snapshot -> {
+                                if (!snapshot.isEmpty()) {
+                                    handleFirebaseItem(epc, snapshot.getDocuments().get(0));
+                                    return;
+                                }
 
-    /**
-     * مطابقة "يبدأ بـ epc" على حقل epcHex في مجموعة items، عشان تغطي القيم
-     * التالفة اللي فيها نص زيادة بعد الـ EPC الحقيقي (زي قطع الرصيد الافتتاحي).
-     * ده حل مؤقت من جهة القراءة فقط - المفروض يتحل السبب الأساسي في الكود
-     * اللي بيكتب/يستورد القطع دي أصلاً (فيتشر الرصيد الافتتاحي).
-     * لو ملقاش حاجة، بينفذ onNotFound عشان يكمل باقي الـ fallback المعتاد.
-     */
-    private void findItemByEpcPrefix(final String epc, final String uid, final Runnable onNotFound) {
-        FirebaseFirestore.getInstance()
-                .collection("users").document(uid).collection("items")
-                .orderBy("epcHex")
-                .startAt(epc)
-                .endAt(epc + "\uf8ff")
-                .limit(1)
-                .get()
-                .addOnSuccessListener(this, snapshot -> {
-                    if (!snapshot.isEmpty()) {
-                        handleFirebaseItem(epc, snapshot.getDocuments().get(0));
-                    } else {
-                        onNotFound.run();
-                    }
+                                // توافق مع البيانات القديمة التي يكون فيها EPC داخل payload.qrCode.
+                                db.collection("users").document(uid).collection("items")
+                                        .whereEqualTo("payload.qrCode", epc)
+                                        .limit(1)
+                                        .get()
+                                        .addOnSuccessListener(this, payloadSnapshot -> {
+                                            if (!payloadSnapshot.isEmpty()) {
+                                                handleFirebaseItem(epc, payloadSnapshot.getDocuments().get(0));
+                                            } else {
+                                                findInBalances(epc, uid);
+                                            }
+                                        })
+                                        .addOnFailureListener(this, e -> findInBalances(epc, uid));
+                            })
+                            .addOnFailureListener(this, e -> findInBalances(epc, uid));
                 })
-                .addOnFailureListener(this, e -> onNotFound.run());
+                .addOnFailureListener(this, e -> {
+                    // لو استعلام ENTRE فشل (نادرًا)، كمّل على المسار العادي بدل ما توقف تمامًا.
+                    db.collection("users").document(uid).collection("items")
+                            .whereEqualTo("epcHex", epc)
+                            .limit(1)
+                            .get()
+                            .addOnSuccessListener(this, snapshot -> {
+                                if (!snapshot.isEmpty()) {
+                                    handleFirebaseItem(epc, snapshot.getDocuments().get(0));
+                                } else {
+                                    findInBalances(epc, uid);
+                                }
+                            })
+                            .addOnFailureListener(this, e2 -> findInBalances(epc, uid));
+                });
     }
 
     private void findInBalances(final String epc, final String uid) {
