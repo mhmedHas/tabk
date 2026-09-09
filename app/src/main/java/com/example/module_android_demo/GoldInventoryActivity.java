@@ -9,6 +9,7 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
@@ -130,8 +131,11 @@ public class GoldInventoryActivity extends Activity {
             debug("⏳ جاري التأكد من تشغيل قراءة RFID...");
             boolean started = MainActivity.instance.startInventoryIfNeeded();
             debug(started
-                    ? "✓ محرك القراءة يعمل/تم طلب تشغيله"
-                    : "❌ تعذر تشغيل محرك القراءة من MainActivity");
+                    ? "✓ تم طلب بدء قراءة RFID من نفس زر المخزون"
+                    : "❌ زر بدء القراءة غير متاح");
+            if (started) {
+                debug("ℹ في الوضع العادي سيتم أخذ EPC من GetNextTag() ثم إرساله للجرد");
+            }
         } else {
             debug("❌ MainActivity غير موجودة؛ لن تصل قراءات RFID");
         }
@@ -492,7 +496,8 @@ public class GoldInventoryActivity extends Activity {
     }
 
     private void updateReaderState() {
-        boolean active = MainActivity.instance != null;
+        boolean active = MainActivity.instance != null
+                && MainActivity.instance.isReaderReadyForGoldInventory();
         tvReaderState.setText(active ? "متصل - انتظار القراءة" : "غير متصل");
         tvReaderState.setTextColor(active ? Color.rgb(50, 235, 80) : Color.LTGRAY);
     }
