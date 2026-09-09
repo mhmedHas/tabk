@@ -28,6 +28,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import com.uhf.api.cls.Reader;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -62,7 +63,10 @@ public class GoldInventoryActivity extends Activity {
     private TextView tvLastUpdate;
     private TextView tvEmpty;
     private TextView tvReaderState;
+    private TextView tvDebug;
     private SwipeRefreshLayout swipeRefresh;
+
+    private final StringBuilder debugLog = new StringBuilder();
 
     private final Handler uiHandler = new Handler(Looper.getMainLooper());
     private long lastUpdateMs = 0L;
@@ -98,7 +102,11 @@ public class GoldInventoryActivity extends Activity {
         tvStatMissing.setText("0");        tvLastUpdate = findViewById(R.id.tv_last_update);
         tvEmpty = findViewById(R.id.tv_empty);
         tvReaderState = findViewById(R.id.tv_reader_state);
+        tvDebug = findViewById(R.id.tv_debug);
         swipeRefresh = findViewById(R.id.swipe_refresh);
+
+        debug("تم فتح صفحة جرد Firebase");
+        debug("الحساب: " + (auth.getCurrentUser() == null ? "غير مسجل" : "تم تسجيل الدخول"));
 
         RecyclerView rvItems = findViewById(R.id.rv_items);
         rvItems.setLayoutManager(new GridLayoutManager(this, 3));
@@ -114,7 +122,19 @@ public class GoldInventoryActivity extends Activity {
 
         updateReaderState();
         registerTagReceiver();
+        debug("✓ تم تسجيل مستمع RFID");
         refreshPresenceUi();
+
+        // نفس StartReadTags/StartReading المستخدم في صفحة المخزون.
+        if (MainActivity.instance != null) {
+            debug("⏳ جاري التأكد من تشغيل قراءة RFID...");
+            boolean started = MainActivity.instance.startInventoryIfNeeded();
+            debug(started
+                    ? "✓ محرك القراءة يعمل/تم طلب تشغيله"
+                    : "❌ تعذر تشغيل محرك القراءة من MainActivity");
+        } else {
+            debug("❌ MainActivity غير موجودة؛ لن تصل قراءات RFID");
+        }
     }
 
     private void registerTagReceiver() {
@@ -125,10 +145,19 @@ public class GoldInventoryActivity extends Activity {
                     return;
                 }
 
+                debug("📡 وصل Broadcast من قارئ RFID");
+
                 byte[] epcBytes = intent.getByteArrayExtra("EPC");
-                if (epcBytes == null || epcBytes.length == 0) return;
+                if (epcBytes == null || epcBytes.length == 0) {
+                    debug("❌ Broadcast وصل بدون EPC");
+                    return;
+                }
+
+                debug("✓ طول EPC = " + epcBytes.length + " bytes");
 
                 String epc = Reader.bytes_Hexstr(epcBytes);
+                debug("🏷 EPC = " + epc);
+
                 handleEpcRead(epc);
             }
         };
@@ -140,7 +169,10 @@ public class GoldInventoryActivity extends Activity {
 
     private void handleEpcRead(String rawEpc) {
         String epc = normalizeEpc(rawEpc);
-        if (epc.isEmpty()) return;
+        if (epc.isEmpty()) {
+            debug("❌ EPC فارغ بعد التحويل");
+            return;
+        }
 
         lastSeen.put(epc, System.currentTimeMillis());
         lastUpdateMs = System.currentTimeMillis();
@@ -148,23 +180,27 @@ public class GoldInventoryActivity extends Activity {
 
         // القطعة اتعرفت قبل كده؛ لا تعمل طلب Firebase في كل قراءة RFID.
         if (displayedEpcs.contains(epc)) {
+            debug("✓ الشريحة موجودة بالفعل في الجرد: " + epc);
             refreshPresenceUi();
             return;
         }
 
         // لو الطلب شغال بالفعل لا نكرره.
         if (pendingEpcs.contains(epc)) {
+            debug("⏳ طلب Firebase جارٍ بالفعل لـ " + epc);
             refreshPresenceUi();
             return;
         }
 
         GoldCatalogItem cached = itemCache.get(epc);
         if (cached != null) {
+            debug("✓ تم العثور على القطعة في الذاكرة");
             addItemToSession(cached);
             return;
         }
 
         pendingEpcs.add(epc);
+        debug("⏳ البحث عن EPC في Firebase...");
         findItemByEpc(epc);
     }
 
@@ -175,6 +211,7 @@ public class GoldInventoryActivity extends Activity {
         final FirebaseAuth auth = FirebaseAuth.getInstance();
         if (auth.getCurrentUser() == null) {
             pendingEpcs.remove(epc);
+            debug("❌ لا يوجد مستخدم Firebase مسجل الدخول");
             return;
         }
 
@@ -195,9 +232,12 @@ public class GoldInventoryActivity extends Activity {
                 .get()
                 .addOnSuccessListener(this, snapshot -> {
                     if (!snapshot.isEmpty()) {
+                        debug("✓ تم العثور على القطعة في items.epcHex");
                         handleFirebaseItem(epc, snapshot.getDocuments().get(0));
                         return;
                     }
+
+                    debug("ℹ لم توجد في items.epcHex، نجرب payload.qrCode");
 
                     // توافق مع البيانات القديمة التي يكون فيها EPC داخل payload.qrCode.
                     db.collection("users").document(uid).collection("items")
@@ -206,8 +246,10 @@ public class GoldInventoryActivity extends Activity {
                             .get()
                             .addOnSuccessListener(this, payloadSnapshot -> {
                                 if (!payloadSnapshot.isEmpty()) {
+                                    debug("✓ تم العثور على القطعة في items.payload.qrCode");
                                     handleFirebaseItem(epc, payloadSnapshot.getDocuments().get(0));
                                 } else {
+                                    debug("ℹ لم توجد في payload.qrCode، نجرب balances");
                                     findInBalances(epc, uid);
                                 }
                             })
@@ -224,8 +266,10 @@ public class GoldInventoryActivity extends Activity {
                 .get()
                 .addOnSuccessListener(this, snapshot -> {
                     if (!snapshot.isEmpty()) {
+                        debug("✓ تم العثور على القطعة في balances.epcHex");
                         handleFirebaseItem(epc, snapshot.getDocuments().get(0));
                     } else {
+                        debug("❌ EPC مقروء لكن غير مسجل في Firebase: " + epc);
                         // الشريحة اتقرأت فعليًا لكن مالهاش أي سجل في Firebase.
                         // نعرضها كـ "غير مسجلة" بدل ما نتجاهلها تمامًا.
                         markEpcUnregistered(epc);
@@ -233,13 +277,13 @@ public class GoldInventoryActivity extends Activity {
                 })
                 .addOnFailureListener(this, e -> {
                     pendingEpcs.remove(epc);
+                    debug("❌ خطأ Firebase: " + e.getMessage());
                     refreshPresenceUi();
                     Toast.makeText(this, "تعذر قراءة بيانات القطعة من Firebase", Toast.LENGTH_SHORT).show();
                 });
     }
 
     /** يعرض كارت "غير مسجلة" لشريحة مقروءة لا يوجد لها أي سجل مطابق في Firebase. */
-    @RequiresApi(api = Build.VERSION_CODES.N)
     private void markEpcUnregistered(String epc) {
         pendingEpcs.remove(epc);
         // لا نضيفها لـ itemCache: لو اتسجلت لاحقًا على Firebase، زر التحديث (سحب للأسفل)
@@ -293,17 +337,17 @@ public class GoldInventoryActivity extends Activity {
 
         itemCache.put(epc, item);
         pendingEpcs.remove(epc);
+        debug("✓ اكتملت قراءة بيانات القطعة وعرضها");
         addItemToSession(item);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
     private void addItemToSession(GoldCatalogItem item) {
         String epc = normalizeEpc(item.epc);
         if (epc.isEmpty() || displayedEpcs.contains(epc)) return;
 
         displayedEpcs.add(epc);
         displayedItems.add(item);
-        displayedItems.sort((a, b) -> a.name.compareToIgnoreCase(b.name));
+        Collections.sort(displayedItems, (a, b) -> a.name.compareToIgnoreCase(b.name));
         refreshPresenceUi();
     }
 
@@ -448,15 +492,33 @@ public class GoldInventoryActivity extends Activity {
     }
 
     private void updateReaderState() {
-        // وجود MainActivity في الخلفية يعني أن محرك القارئ هو الذي يرسل Broadcastات الـ EPC.
-        boolean active = MainActivityActiveHolder.isActive;
-        tvReaderState.setText(active ? "متصل" : "جاهز لقراءة RFID");
+        boolean active = MainActivity.instance != null;
+        tvReaderState.setText(active ? "متصل - انتظار القراءة" : "غير متصل");
         tvReaderState.setTextColor(active ? Color.rgb(50, 235, 80) : Color.LTGRAY);
     }
 
-    /** حالة بسيطة يتم ضبطها من lifecycle الخاص بـ MainActivity في النسخة الحالية. */
-    static class MainActivityActiveHolder {
-        static boolean isActive = false;
+    private void debug(String message) {
+        if (tvDebug == null) return;
+
+        String line = message;
+        debugLog.append(line).append("\n");
+
+        // نحتفظ بآخر 8 رسائل فقط حتى لا تمتلئ الشاشة.
+        String[] lines = debugLog.toString().split("\\n");
+        if (lines.length > 8) {
+            debugLog.setLength(0);
+            for (int i = Math.max(0, lines.length - 8); i < lines.length; i++) {
+                debugLog.append(lines[i]).append("\n");
+            }
+        }
+
+        tvDebug.setText(debugLog.toString());
+        tvDebug.post(() -> {
+            if (tvDebug.getLayout() != null) {
+                tvDebug.scrollTo(0, tvDebug.getLayout().getLineTop(tvDebug.getLineCount()));
+            }
+        });
+        Log.d("RFID_FLOW", message);
     }
 
     private static String normalizeEpc(String value) {
@@ -498,8 +560,8 @@ public class GoldInventoryActivity extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
-        MainActivityActiveHolder.isActive = true;
         uiHandler.post(presenceTicker);
+        updateReaderState();
     }
 
     @Override
@@ -511,7 +573,6 @@ public class GoldInventoryActivity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        MainActivityActiveHolder.isActive = false;
         if (tagReceiver != null) {
             try {
                 unregisterReceiver(tagReceiver);
