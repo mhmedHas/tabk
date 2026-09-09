@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:2:1-123:12
-INJECTED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:2:1-123:12
-INJECTED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:2:1-123:12
-INJECTED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:2:1-123:12
+ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:2:1-127:12
+INJECTED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:2:1-127:12
+INJECTED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:2:1-127:12
+INJECTED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:2:1-127:12
 MERGED from [DeviceAPI_ver20260415.aar] C:\Users\mhmed\.gradle\caches\transforms-3\c5e74472eef86616621a7ee3648ea125\transformed\jetified-DeviceAPI_ver20260415\AndroidManifest.xml:2:1-13:12
 MERGED from [jwsapi.aar] C:\Users\mhmed\.gradle\caches\transforms-3\a3f0904027815b997afa40be307383be\transformed\jetified-jwsapi\AndroidManifest.xml:2:1-12:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\mhmed\.gradle\caches\transforms-3\50cf0b7917cab0c1e6c8511b3e5f1c00\transformed\jetified-appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
@@ -140,34 +140,38 @@ ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:1
 	android:name
 		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:14:22-75
 uses-permission#android.permission.POST_NOTIFICATIONS
-ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:17:5-77
+ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:15:5-77
 	android:name
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:17:22-74
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:15:22-74
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:16:5-77
+	android:name
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:16:22-74
 uses-permission#android.permission.BLUETOOTH
-ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:20:5-68
+ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:24:5-68
 	android:name
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:20:22-65
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:24:22-65
 uses-permission#android.permission.BLUETOOTH_ADMIN
-ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:21:5-74
+ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:25:5-74
 	android:name
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:21:22-71
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:25:22-71
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:22:5-79
+ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:26:5-79
 	android:name
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:22:22-76
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:26:22-76
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:23:5-81
+ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:27:5-81
 	android:name
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:23:22-78
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:27:22-78
 uses-feature#android.hardware.usb.host
-ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:26:5-87
+ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:30:5-87
 	android:required
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:26:60-84
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:30:60-84
 	android:name
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:26:19-59
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:30:19-59
 application
-ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:28:5-121:19
-INJECTED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:28:5-121:19
+ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:32:5-125:19
+INJECTED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:32:5-125:19
 MERGED from [com.google.firebase:firebase-auth:23.1.0] C:\Users\mhmed\.gradle\caches\transforms-3\3466598c297031398958726e6f1c0a90\transformed\jetified-firebase-auth-23.1.0\AndroidManifest.xml:28:5-73:19
 MERGED from [com.google.firebase:firebase-auth:23.1.0] C:\Users\mhmed\.gradle\caches\transforms-3\3466598c297031398958726e6f1c0a90\transformed\jetified-firebase-auth-23.1.0\AndroidManifest.xml:28:5-73:19
 MERGED from [com.google.firebase:firebase-firestore:25.1.1] C:\Users\mhmed\.gradle\caches\transforms-3\28ddf97b809c4ae6170d4a76235219d7\transformed\jetified-firebase-firestore-25.1.1\AndroidManifest.xml:13:5-24:19
@@ -215,145 +219,145 @@ MERGED from [com.google.android.play:core-common:2.0.3] C:\Users\mhmed\.gradle\c
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.9.0] C:\Users\mhmed\.gradle\caches\transforms-3\a5ac3fed87324161d4ef560f3260355d\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
 	android:label
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:32:13-45
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:36:13-45
 	android:icon
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:31:13-52
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:35:13-52
 	android:allowBackup
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:30:13-39
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:34:13-39
 	android:theme
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:33:13-44
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:37:13-44
 	android:name
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:29:13-73
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:33:13-73
 activity#com.example.module_android_demo.LoginActivity
-ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:36:9-47:20
+ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:40:9-51:20
 	android:label
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:40:17-49
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:44:17-49
 	android:windowSoftInputMode
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:39:17-59
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:43:17-59
 	android:exported
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:38:17-40
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:42:17-40
 	android:name
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:37:17-77
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:41:17-77
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:42:13-45:29
+ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:46:13-49:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:43:17-69
+ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:47:17-69
 	android:name
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:43:25-66
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:47:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:44:17-77
+ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:48:17-77
 	android:name
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:44:27-74
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:48:27-74
 activity#com.example.module_android_demo.GoldInventoryActivity
-ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:50:9-54:48
+ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:54:9-58:48
 	android:label
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:54:17-45
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:58:17-45
 	android:windowSoftInputMode
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:53:17-58
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:57:17-58
 	android:exported
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:52:17-41
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:56:17-41
 	android:name
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:51:17-85
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:55:17-85
 activity#com.example.module_android_demo.MainActivity
-ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:57:9-63:20
+ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:61:9-67:20
 	android:label
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:61:17-49
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:65:17-49
 	android:windowSoftInputMode
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:60:17-58
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:64:17-58
 	android:exported
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:59:17-41
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:63:17-41
 	android:name
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:58:17-76
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:62:17-76
 activity#com.example.module_android_demo.Sub4TabActivity
-ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:65:9-68:61
+ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:69:9-72:61
 	android:windowSoftInputMode
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:68:17-58
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:72:17-58
 	android:exported
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:67:17-41
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:71:17-41
 	android:name
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:66:17-79
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:70:17-79
 activity#com.example.module_android_demo.Sub1TabActivity
-ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:70:9-73:61
+ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:74:9-77:61
 	android:windowSoftInputMode
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:73:17-58
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:77:17-58
 	android:exported
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:72:17-41
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:76:17-41
 	android:name
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:71:17-79
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:75:17-79
 activity#com.example.module_android_demo.Sub3TabActivity
-ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:75:9-78:61
+ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:79:9-82:61
 	android:windowSoftInputMode
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:78:17-58
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:82:17-58
 	android:exported
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:77:17-41
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:81:17-41
 	android:name
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:76:17-79
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:80:17-79
 activity#com.example.module_android_demo.SubSystemActivity
-ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:80:9-83:61
+ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:84:9-87:61
 	android:windowSoftInputMode
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:83:17-58
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:87:17-58
 	android:exported
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:82:17-41
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:86:17-41
 	android:name
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:81:17-81
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:85:17-81
 activity#com.example.module_android_demo.SubPathActivity
-ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:85:9-88:61
+ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:89:9-92:61
 	android:windowSoftInputMode
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:88:17-58
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:92:17-58
 	android:exported
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:87:17-41
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:91:17-41
 	android:name
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:86:17-79
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:90:17-79
 activity#com.example.module_android_demo.SubQTActivity
-ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:90:9-93:61
+ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:94:9-97:61
 	android:windowSoftInputMode
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:93:17-58
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:97:17-58
 	android:exported
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:92:17-41
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:96:17-41
 	android:name
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:91:17-77
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:95:17-77
 activity#com.example.module_android_demo.SubCarryWaveActivity
-ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:95:9-98:61
+ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:99:9-102:61
 	android:windowSoftInputMode
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:98:17-58
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:102:17-58
 	android:exported
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:97:17-41
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:101:17-41
 	android:name
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:96:17-84
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:100:17-84
 activity#com.example.module_android_demo.SubDebugActivity
-ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:100:9-103:61
+ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:104:9-107:61
 	android:windowSoftInputMode
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:103:17-58
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:107:17-58
 	android:exported
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:102:17-41
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:106:17-41
 	android:name
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:101:17-80
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:105:17-80
 activity#com.example.module_android_demo.SubRegopActivity
-ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:105:9-108:61
+ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:109:9-112:61
 	android:windowSoftInputMode
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:108:17-58
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:112:17-58
 	android:exported
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:107:17-41
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:111:17-41
 	android:name
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:106:17-80
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:110:17-80
 activity#com.example.module_android_demo.SubTagTempLedActivity
-ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:110:9-113:61
+ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:114:9-117:61
 	android:windowSoftInputMode
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:113:17-58
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:117:17-58
 	android:exported
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:112:17-41
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:116:17-41
 	android:name
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:111:17-85
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:115:17-85
 activity#com.example.module_android_demo.UpdateActivity
-ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:115:9-119:61
+ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:119:9-123:61
 	android:screenOrientation
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:118:17-53
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:122:17-53
 	android:windowSoftInputMode
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:119:17-58
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:123:17-58
 	android:exported
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:117:17-41
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:121:17-41
 	android:name
-		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:116:17-78
+		ADDED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml:120:17-78
 uses-sdk
 INJECTED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\mhmed\Downloads\tabk-main\app\src\main\AndroidManifest.xml
