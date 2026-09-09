@@ -808,7 +808,9 @@ public class Sub1TabActivity<OpeListActivity> extends Activity {
 		tw.getChildAt(1).setVisibility(View.VISIBLE);
 		tw.getChildAt(2).setVisibility(View.VISIBLE);
 		tw.getChildAt(3).setVisibility(View.VISIBLE);
-		myapp.tabHost.setCurrentTab(1);
+		// بدل ما نفتح تاب "盘点/INVENTORY" العادي، نفتح شاشة صحن الذهب
+		// (صور القطع + التلوين الأخضر/الأحمر حسب وجودها) على طول بعد نجاح الاتصال.
+		startActivity(new Intent(Sub1TabActivity.this, GoldInventoryActivity.class));
 	}
 
 	private void DisConnectHandleUI() {
