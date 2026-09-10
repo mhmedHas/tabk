@@ -164,6 +164,11 @@ public class GoldItemAdapter extends RecyclerView.Adapter<GoldItemAdapter.ViewHo
                 .addOnSuccessListener(result -> {
                     if (!result.getItems().isEmpty()) {
                         downloadStorageImage(result.getItems().get(0), epc, target);
+                    } else {
+                        // مفيش أي صورة للقطعة دي في الـ Storage - لازم نمسحها من
+                        // imageLoadStarted برضو، وإلا تفضل "معلّقة" للأبد وميحصلش
+                        // أي محاولة تحميل تانية ليها طول عمر التطبيق شغال.
+                        synchronized (imageLoadStarted) { imageLoadStarted.remove(epc); }
                     }
                 })
                 .addOnFailureListener(e -> {
