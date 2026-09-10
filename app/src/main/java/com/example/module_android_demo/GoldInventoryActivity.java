@@ -50,11 +50,16 @@ import java.util.Set;
 public class GoldInventoryActivity extends Activity {
 
     private static final long PRESENCE_WINDOW_MS = 1600L;
+    // القارئ بيرجّع نفس الشريحة آلاف المرات في الثانية طول ما هي على الصحن.
+    // بنحدّ معالجة كل EPC (تحديث الشاشة/الـ RecyclerView) بحد أقصى مرة كل
+    // المدة دي، عشان منغرقش الـ UI thread ونعمل ANR.
+    private static final long PROCESS_THROTTLE_MS = 300L;
 
     private final Map<String, GoldCatalogItem> itemCache = new HashMap<>();
     private final Set<String> displayedEpcs = new HashSet<>();
     private final Set<String> pendingEpcs = new HashSet<>();
     private final Map<String, Long> lastSeen = new HashMap<>();
+    private final Map<String, Long> lastProcessedMs = new HashMap<>();
     private final List<GoldCatalogItem> displayedItems = new ArrayList<>();
 
     private GoldItemAdapter adapter;
@@ -149,19 +154,17 @@ public class GoldInventoryActivity extends Activity {
                     return;
                 }
 
-                debug("📡 وصل Broadcast من قارئ RFID");
-
                 byte[] epcBytes = intent.getByteArrayExtra("EPC");
                 if (epcBytes == null || epcBytes.length == 0) {
                     debug("❌ Broadcast وصل بدون EPC");
                     return;
                 }
 
-                debug("✓ طول EPC = " + epcBytes.length + " bytes");
-
+                // ملاحظة: القارئ بيبعت الـ broadcast ده آلاف المرات في الثانية
+                // طول ما الشريحة موجودة على الصحن، فمهم نتجنب أي عملية
+                // debug()/UI هنا قبل الـ throttling اللي جوه handleEpcRead -
+                // عملها هنا كان بيغرق الـ UI thread ويعمل ANR ("توقف عن العمل").
                 String epc = Reader.bytes_Hexstr(epcBytes);
-                debug("🏷 EPC = " + epc);
-
                 handleEpcRead(epc);
             }
         };
@@ -178,23 +181,39 @@ public class GoldInventoryActivity extends Activity {
             return;
         }
 
-        lastSeen.put(epc, System.currentTimeMillis());
-        lastUpdateMs = System.currentTimeMillis();
-        updateReaderState();
+        long now = System.currentTimeMillis();
+        lastSeen.put(epc, now);
+        lastUpdateMs = now;
+
+        // القارئ بيرجّع نفس الشريحة آلاف المرات في الثانية وهي واقفة على
+        // الصحن (rt:3823 0/s شفناها فعلاً في القراءة العادية). لو عملنا
+        // debug()/refreshPresenceUi()/updateReaderState() على كل قراءة،
+        // الـ UI thread بيتغرق فورًا ويعمل ANR ("توقف عن العمل"). فبنحدّ
+        // إعادة المعالجة الكاملة لكل EPC بحد أقصى مرة كل PROCESS_THROTTLE_MS،
+        // مع إن lastSeen (فوق) بيتحدّث في كل قراءة عادي عشان دقة "موجود/مرفوعة".
+        Long lastProcessed = lastProcessedMs.get(epc);
+        boolean throttled = lastProcessed != null && (now - lastProcessed) < PROCESS_THROTTLE_MS;
 
         // القطعة اتعرفت قبل كده؛ لا تعمل طلب Firebase في كل قراءة RFID.
         if (displayedEpcs.contains(epc)) {
-            debug("✓ الشريحة موجودة بالفعل في الجرد: " + epc);
-            refreshPresenceUi();
+            if (!throttled) {
+                lastProcessedMs.put(epc, now);
+                refreshPresenceUi();
+                updateReaderState();
+            }
             return;
         }
 
         // لو الطلب شغال بالفعل لا نكرره.
         if (pendingEpcs.contains(epc)) {
-            debug("⏳ طلب Firebase جارٍ بالفعل لـ " + epc);
-            refreshPresenceUi();
+            if (!throttled) {
+                lastProcessedMs.put(epc, now);
+                refreshPresenceUi();
+            }
             return;
         }
+
+        lastProcessedMs.put(epc, now);
 
         GoldCatalogItem cached = itemCache.get(epc);
         if (cached != null) {
