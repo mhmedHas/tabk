@@ -755,6 +755,11 @@ public class MainActivity extends TabActivity {
 				intent.putExtra("TSP", tag[i].TimeStamp);
 
 				sendBroadcast(intent);
+
+				// وضع ThreadMODE==1 (async/快速模式) بيبعت على BROADCAST_ACTION1 بس
+				// (لـ MyBroadcastReceiver وتاب 盘点) - لازم نبعت نفس الـ EPC لجرد
+				// الذهب برضو هنا، وإلا الشاشة تفضل من غير أي قطع في الوضع ده.
+				broadcastGoldInventoryTag(tag[i]);
 			}
 
 		}
