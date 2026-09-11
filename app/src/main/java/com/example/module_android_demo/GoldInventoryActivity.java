@@ -150,7 +150,7 @@ public class GoldInventoryActivity extends Activity {
         tagReceiver = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
-                if (intent == null || !MainActivity.BROADCAST_ACTION1.equals(intent.getAction())) {
+                if (intent == null || !MainActivity.BROADCAST_ACTION_GOLD_INVENTORY.equals(intent.getAction())) {
                     return;
                 }
 
@@ -169,7 +169,7 @@ public class GoldInventoryActivity extends Activity {
             }
         };
 
-        IntentFilter filter = new IntentFilter(MainActivity.BROADCAST_ACTION1);
+        IntentFilter filter = new IntentFilter(MainActivity.BROADCAST_ACTION_GOLD_INVENTORY);
         ContextCompat.registerReceiver(this, tagReceiver, filter,
                 ContextCompat.RECEIVER_NOT_EXPORTED);
     }

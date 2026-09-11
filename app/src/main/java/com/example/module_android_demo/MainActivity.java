@@ -594,6 +594,17 @@ public class MainActivity extends TabActivity {
 	// ****************************************事件方式读取标签(event way for get tags)
 	MyBroadcastReceiver mBroadcastReceiver = new MyBroadcastReceiver();
 	public static final String BROADCAST_ACTION1 = "com.example.module_android_demo";
+	/**
+	 * Broadcast منفصل تمامًا عن BROADCAST_ACTION1 خصيصًا لشاشة جرد الذهب
+	 * (GoldInventoryActivity). لازم يفضل منفصل: BROADCAST_ACTION1 بتستقبله
+	 * MainActivity.MyBroadcastReceiver نفسها وبتبني منه TAGINFO كامل (PC،
+	 * CRC، Frequency، protocol...) عشان تحدّث شاشة 盘点/INVENTORY - لو
+	 * استخدمنا نفس الـ action لجرد الذهب، الـ receiver ده هيحاول يعالج
+	 * broadcast ناقص البيانات دي على إنه تاج حقيقي، وده اللي كان بيسبب
+	 * الكراش لحظة أول قراءة شريحة.
+	 */
+	public static final String BROADCAST_ACTION_GOLD_INVENTORY =
+			"com.example.module_android_demo.GOLD_INVENTORY_TAG";
 	public static final String BROADCAST_ACTION2 = "com.android.action.keyevent.KEYCODE_KEYCODE_UHF_UP";
 	public static final String BROADCAST_ACTION3 = "com.android.action.keyevent.KEYCODE_KEYCODE_UHF_DOWN";
 
@@ -689,15 +700,19 @@ public class MainActivity extends TabActivity {
 
 	private void broadcastGoldInventoryTag(TAGINFO tfs) {
 		if (tfs == null || tfs.EpcId == null || tfs.EpcId.length == 0) return;
-		Intent intent = new Intent(BROADCAST_ACTION1);
-		intent.setPackage(getPackageName());
-		intent.putExtra("EPC", tfs.EpcId);
-		intent.putExtra("ANT", tfs.AntennaID);
-		intent.putExtra("RDC", tfs.ReadCnt);
-		intent.putExtra("RSSI", tfs.RSSI);
-		intent.putExtra("SRC", "GET_NEXT_TAG");
-		sendBroadcast(intent);
-		Log.d("RFID_FLOW", "GOLD EPC=" + Reader.bytes_Hexstr(tfs.EpcId));
+		try {
+			Intent intent = new Intent(BROADCAST_ACTION_GOLD_INVENTORY);
+			intent.setPackage(getPackageName());
+			intent.putExtra("EPC", tfs.EpcId);
+			intent.putExtra("ANT", tfs.AntennaID);
+			intent.putExtra("RDC", tfs.ReadCnt);
+			intent.putExtra("RSSI", tfs.RSSI);
+			intent.putExtra("SRC", "GET_NEXT_TAG");
+			sendBroadcast(intent);
+			Log.d("RFID_FLOW", "GOLD EPC=" + Reader.bytes_Hexstr(tfs.EpcId));
+		} catch (Exception e) {
+			Log.e("GOLD_RFID", "Gold broadcast failed", e);
+		}
 	}
 
 	/**
@@ -3472,7 +3487,7 @@ public class MainActivity extends TabActivity {
 	/**
 	 * بيشغّل نفس اللي زرار "开始" (button_read) بيعمله لما تدوسه بإيدك في
 	 * تاب 盘点/INVENTORY - يعني ببدأ حلقة القراءة الفعلية اللي بتبعت
-	 * BROADCAST_ACTION1 لكل شريحة، وده اللي شاشة GoldInventoryActivity
+	 * BROADCAST_ACTION_GOLD_INVENTORY لكل شريحة، وده اللي شاشة GoldInventoryActivity
 	 * (جرد Firebase) مستمعة له. بدون النداء ده، الشاشة تفضل مستمعة بس
 	 * حلقة القراءة نفسها ما بتكونش بدأت أبداً.
 	 * آمن يتنادى أكتر من مرة - performClick() هيرجع false بس لو الزرار
