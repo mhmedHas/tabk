@@ -120,8 +120,6 @@ public class MainActivity extends TabActivity {
 	ScreenListener l;
 	AndroidWakeLock Awl;
 	int Test_count = 0;
-    public static final String BROADCAST_ACTION_GOLD_INVENTORY =
-            "com.example.module_android_demo.GOLD_INVENTORY_TAG";
 
 	// RULE 为true时候 可以设置默认平台(RULE when is true,that default one PDA platform)
 	boolean RULE_NOSELPT = false;
