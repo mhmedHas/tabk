@@ -1,6 +1,7 @@
 package com.example.module_android_demo;
 
 import android.content.Context;
+import android.animation.ValueAnimator;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -74,8 +75,11 @@ public class GoldItemAdapter extends RecyclerView.Adapter<GoldItemAdapter.ViewHo
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         GoldCatalogItem item = items.get(position);
         boolean present = presenceChecker.isPresent(item.epc);
+        String previousEpc = (String) holder.imgView.getTag();
+        boolean sameItemAsBefore = item.epc.equals(previousEpc);
 
         if (!item.registered) {
+            stopBlink(holder);
             bindUnregistered(holder, item, present);
             return;
         }
@@ -92,15 +96,74 @@ public class GoldItemAdapter extends RecyclerView.Adapter<GoldItemAdapter.ViewHo
         holder.tvStatusIcon.setText(present ? "●" : "▲");
         holder.tvStatusIcon.setTextColor(stateColor);
 
-        GradientDrawable border = new GradientDrawable();
-        border.setColor(Color.parseColor(present ? "#0D2D22" : "#301A1D"));
-        border.setStroke(dp(1), Color.parseColor(present ? "#1B9E59" : "#A83C43"));
-        border.setCornerRadius(dp(12));
-        holder.card.setBackground(border);
+        // شاشة صحن الذهب بتعمل notifyDataSetChanged كل 250ms عشان تحدّث
+        // حالة الوجود، بينما دورة الوميض 650ms - لو عملنا إعادة تشغيل للوميض
+        // في كل bind هيبقى بيتقطع/يتلخبط بدل ما يبان لينة. فبنكمّل نفس
+        // الأنيميشن الشغالة طول ما لسه نفس القطعة ولسه "مرفوعة"، وبس
+        // نعيد الإنشاء لما تتغيّر الحالة فعليًا (اتشالت/اترجعت/قطعة تانية).
+        boolean continuingBlink = sameItemAsBefore && !present
+                && holder.blinkAnimator != null && holder.blinkAnimator.isRunning();
+
+        if (!continuingBlink) {
+            stopBlink(holder);
+            GradientDrawable border = new GradientDrawable();
+            border.setColor(Color.parseColor(present ? "#0D2D22" : "#301A1D"));
+            border.setStroke(dp(1), Color.parseColor(present ? "#1B9E59" : "#A83C43"));
+            border.setCornerRadius(dp(12));
+            holder.card.setBackground(border);
+
+            if (!present) {
+                // القطعة اتشالت من على الصحن: وميض أحمر مستمر على الكارت +
+                // نبضة تكبير/تصغير بسيطة على الصورة، طول ما لسه في حالة "مرفوعة".
+                startRemovedBlink(holder, border);
+            }
+        }
 
         holder.imgView.setTag(item.epc);
         holder.imgView.setImageResource(android.R.drawable.ic_menu_gallery);
         loadImage(item, holder.imgView);
+    }
+
+    /** وميض أحمر مستمر (loop) على خلفية/برواز الكارت + نبضة تكبير خفيفة على الصورة. */
+    private void startRemovedBlink(final ViewHolder holder, final GradientDrawable border) {
+        final int baseFill = Color.parseColor("#301A1D");
+        final int brightFill = Color.parseColor("#5A2228");
+        final int baseStroke = Color.parseColor("#A83C43");
+        final int brightStroke = Color.parseColor("#FF5C63");
+
+        ValueAnimator anim = ValueAnimator.ofFloat(0f, 1f);
+        anim.setDuration(650);
+        anim.setRepeatMode(ValueAnimator.REVERSE);
+        anim.setRepeatCount(ValueAnimator.INFINITE);
+        anim.addUpdateListener(a -> {
+            float f = (float) a.getAnimatedValue();
+            border.setColor(blendColors(baseFill, brightFill, f));
+            border.setStroke(dp(1), blendColors(baseStroke, brightStroke, f));
+
+            float scale = 1f + f * 0.08f; // نبضة خفيفة: من 1.0 لحد 1.08 وترجع
+            holder.imgView.setScaleX(scale);
+            holder.imgView.setScaleY(scale);
+        });
+        anim.start();
+        holder.blinkAnimator = anim;
+    }
+
+    private void stopBlink(ViewHolder holder) {
+        if (holder.blinkAnimator != null) {
+            holder.blinkAnimator.cancel();
+            holder.blinkAnimator = null;
+        }
+        holder.imgView.setScaleX(1f);
+        holder.imgView.setScaleY(1f);
+    }
+
+    private static int blendColors(int from, int to, float fraction) {
+        float invF = 1f - fraction;
+        int a = (int) (Color.alpha(from) * invF + Color.alpha(to) * fraction);
+        int r = (int) (Color.red(from) * invF + Color.red(to) * fraction);
+        int g = (int) (Color.green(from) * invF + Color.green(to) * fraction);
+        int b = (int) (Color.blue(from) * invF + Color.blue(to) * fraction);
+        return Color.argb(a, r, g, b);
     }
 
     /** كارت لشريحة اتقرأت لكن مالهاش سجل في Firebase: تحذير برتقالي بدل الصورة والبيانات. */
@@ -131,6 +194,14 @@ public class GoldItemAdapter extends RecyclerView.Adapter<GoldItemAdapter.ViewHo
     @Override
     public int getItemCount() {
         return items.size();
+    }
+
+    @Override
+    public void onViewRecycled(@NonNull ViewHolder holder) {
+        super.onViewRecycled(holder);
+        // وقف أي وميض شغال لما الكارت يخرج من الشاشة، عشان منسيبش أنيميشن
+        // شغالة على view مش ظاهر.
+        stopBlink(holder);
     }
 
     private void loadImage(final GoldCatalogItem item, final ImageView target) {
@@ -252,6 +323,7 @@ public class GoldItemAdapter extends RecyclerView.Adapter<GoldItemAdapter.ViewHo
         View card;
         ImageView imgView;
         TextView tvName, tvType, tvWeight, tvColor, tvEpc, tvStatus, tvStatusIcon;
+        ValueAnimator blinkAnimator;
 
         ViewHolder(@NonNull View itemView) {
             super(itemView);

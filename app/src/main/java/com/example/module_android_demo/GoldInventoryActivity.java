@@ -102,10 +102,8 @@ public class GoldInventoryActivity extends Activity {
 
         tvStatTotal = findViewById(R.id.tv_stat_total);
         tvStatPresent = findViewById(R.id.tv_stat_present);
-// tvStatMissing = findViewById(R.id.tv_stat_missing);
-// مؤقتاً: استخدم TextView موجود أو أنشئ واحداً في الكود
-        tvStatMissing = new TextView(this);
-        tvStatMissing.setText("0");        tvLastUpdate = findViewById(R.id.tv_last_update);
+        tvStatMissing = findViewById(R.id.tv_stat_missing);
+        tvLastUpdate = findViewById(R.id.tv_last_update);
         tvEmpty = findViewById(R.id.tv_empty);
         tvReaderState = findViewById(R.id.tv_reader_state);
         tvDebug = findViewById(R.id.tv_debug);

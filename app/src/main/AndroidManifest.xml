@@ -50,6 +50,7 @@
                 android:name="com.example.module_android_demo.GoldInventoryActivity"
                 android:exported="false"
                 android:windowSoftInputMode="stateHidden"
+                android:theme="@android:style/Theme.NoTitleBar"
                 android:label="جرد Firebase" />
 
         <!-- Main Activity -->
