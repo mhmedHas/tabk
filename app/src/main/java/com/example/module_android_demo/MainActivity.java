@@ -2256,10 +2256,11 @@ public class MainActivity extends TabActivity {
                     myapp.myhd.module== Module_Type.MODOULE_SIM7600))
                 isex=false;
 
-            if(isex)
-              rfu=String.format("%.2f",((tfs.Res[0]<<8|tfs.Res[1]&0xff)&0xFFF)*360.0/4096);
-                else
-            rfu = String.valueOf(tfs.Res[1] & 0x3f);
+            if (isex) {
+                rfu = String.format("%.2f", ((tfs.Res[0] << 8 | tfs.Res[1] & 0xff) & 0xFFF) * 360.0 / 4096);
+            } else {
+                rfu = String.valueOf(tfs.Res[1] & 0x3f);
+            }
 
 			// rfu=String.valueOf((tfs.Res[1]&0x3f)*180/64);
 		}
